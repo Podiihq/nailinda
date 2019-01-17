@@ -19,4 +19,3 @@ defmodule Nailinda.Repo.Migrations.CreatePatient do
     end
   end
 end
-end
