@@ -16,6 +16,7 @@ defmodule NailindaWeb.Router do
   scope "/", NailindaWeb do
     pipe_through :browser
 
+    get "/users", PatientController, :new
     get "/", PageController, :index
   end
 
