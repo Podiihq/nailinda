@@ -12,7 +12,7 @@ defmodule Nailinda.User.Patient do
 		field(:location, :string)
 		field(:id_number, :integer)
 		field(:phone_number, :integer)
-		field(:next_of_kin, :integer)
+		field(:next_of_kin, :string)
 
 	  timestamps()
   end 
@@ -28,6 +28,5 @@ defmodule Nailinda.User.Patient do
   		:next_of_kin
   		])
   	|> validate_required([:first_name, :last_name, :date_of_birth, :location])
-    |> validate_length(:id_number, min: 1, max: 10)
   end
 end

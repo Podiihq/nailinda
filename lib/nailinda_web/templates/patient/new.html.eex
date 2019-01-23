@@ -1,13 +1,13 @@
 <h1>Patient Details</h1>
-<%= form_for @changeset, Routes.patient_path(@conn, :new), fn f -> %>
+<%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
 <div>
 <%= text_input f, :first_name, placeholder: "First Name" %>
 </div>
 <div>
-<%= text_input f, :Last_name, placeholder: "Last Name" %>
+<%= text_input f, :last_name, placeholder: "Last Name" %>
 </div>
 <div>
-<%= text_input f, :date_of_birth, placeholder: "Date Of Birth" %>
+<%= date_select f, :date_of_birth, placeholder: "Date Of Birth" %>
 </div>
 <div>
 <%= text_input f,:location , placeholder: " Location" %>

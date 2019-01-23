@@ -9,7 +9,7 @@ defmodule Nailinda.Repo.Migrations.CreatePatient do
       add :location, :string
       add :id_number, :integer
       add :phone_number, :integer
-      add :next_of_kin, :integer
+      add :next_of_kin, :string
 
       timestamps()
      end
