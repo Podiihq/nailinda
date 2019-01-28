@@ -1,0 +1,34 @@
+version: '3.2'
+services:
+  db:
+    environment:
+        - TERM=xterm-256color
+    tty: true
+    image: postgres
+    ports:
+      - "2345:2345"
+
+  redis:
+    image: redis:5.0.3-alpine
+    command: ["redis-server"]
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+
+  web:
+    environment:
+        - TERM=xterm-256color
+    tty: true
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+      - redis
+    command:
+      - ./run.sh
