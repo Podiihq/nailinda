@@ -9,9 +9,14 @@ defmodule NailindaWeb.PatientController do
 	 end
 
 	 def create(conn, %{"patient" => patient_params}) do
-	 	{:ok, patient} = User.create_user(patient_params)
+	 	case User.create_user(patient_params) do  
+	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
-	 	|>  redirect(to: "/")
+	 	|>  redirect(to: Routes.patient_path(conn, :new))
+
+    {:error, %Ecto.Changeset{} = changeset} ->
+      render(conn, "new.html", changeset: changeset)
 	 end
+  end
 end
