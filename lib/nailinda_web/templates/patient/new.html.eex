@@ -21,8 +21,13 @@
 <div>
 <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
 </div>
+<div>
+	
 <%= submit "Create User" %>
+
+</div>
 <% end %>
+<%= link "view", to: Routes.patient_path(@conn, :show) %>
 
   		
   		
