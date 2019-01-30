@@ -9,7 +9,7 @@ defmodule NailindaWeb.PatientController do
 	 end
 
 	 def create(conn, %{"patient" => patient_params}) do
-	 	case User.create_user(patient_params) do  
+	 	case User.create_patient(patient_params) do  
 	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
