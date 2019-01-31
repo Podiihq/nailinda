@@ -11,7 +11,7 @@ defmodule Nailinda.UserTest do
    	             id_number: nil, phone_number: nil, next_of_kin: nil}
 
     test "creates user with valid data " do
-      assert{:ok, %Patient{} = patient} = User.create_user(@valid_attrs)
+      assert{:ok, %Patient{} = patient} = User.create_patient(@valid_attrs)
       assert patient.first_name == "jackline"
       assert patient.last_name  == "kaunda"
       assert patient.date_of_birth == ~D[2019-01-28]
@@ -22,7 +22,7 @@ defmodule Nailinda.UserTest do
     end
 
     test "create user with invalid data to return a error" do 
-     assert {:error, %Ecto.Changeset{}} = User.create_user(@invalid_attrs)
+     assert {:error, %Ecto.Changeset{}} = User.create_patient(@invalid_attrs)
     end
   end              
 end
