@@ -7,22 +7,20 @@ defmodule NailindaWeb.PatientController do
     alias Nailinda.User.Patient
     changeset = Patient.changeset(%Patient{}, %{})
     render(conn, "new.html", changeset: changeset)
-  end
+  end 
+      
 
-  def create(conn, %{"patient" => patient_params}) do
-    alias Nailinda.User.Patient
-    case User.create_user(patient_params) do
-      {:ok, %Patient{} = patient} ->
-        conn
-        |> put_flash(:info, "#{patient.first_name}  created successfuly")
-        |> redirect(to: "/patient" )
-
-      {:error, %Ecto.Changeset{} = changeset} ->
+	 def create(conn, %{"patient" => patient_params}) do
+	 	case User.create_patient(patient_params) do  
+	 	{:ok, %Patient{} = patient} ->
+	 	conn
+	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
+	 	|>  redirect(to: Routes.patient_path(conn, :new))
+    {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
-    end
-
-   
+    end   
   end
+  
    def show(conn, _params) do
       patients = User.get_patient
       render(conn, "show.html", patients: patients)
