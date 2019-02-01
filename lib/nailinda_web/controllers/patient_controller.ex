@@ -15,7 +15,9 @@ defmodule NailindaWeb.PatientController do
 	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
-	 	|>  redirect(to: Routes.patient_path(conn, :new))
+	 	|>  redirect(to: "/")
+
+
     {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end   
