@@ -1,7 +1,8 @@
-<h2>Patient details</h2>
+<h1>Showing Patient</h1>
 
- <table>
+<table>
  	<thead>
+ 		<th>ID</th>
  		<th> First Name</th>
  		<th> Last name</th>
  		<th>Date of birth</th>
@@ -12,18 +13,16 @@
   </thead>
 
   <tbody>
-  	<%= for patient <- @patients  do %>
-  	<tr>
-  	<td><%= patient.first_name %> </td>
-  	<td><%= patient.last_name  %></td>
-  	<td><%= patient.date_of_birth %></td>
-  	<td><%= patient.id_number %></td>
-  	<td><%= patient.location %></td>
-  	<td><%= patient.phone_number %></td>
-  	<td><%= patient.next_of_kin  %></td>
+  	
+  	<tr> 
+  		<td><%=@patient.id %> </td>
+  	<td><%= @patient.first_name %> </td>
+  	<td><%= @patient.last_name  %></td>
+  	<td><%= @patient.date_of_birth %></td>
+  	<td><%= @patient.id_number %></td>
+  	<td><%= @patient.location %></td>
+  	<td><%= @patient.phone_number %></td>
+  	<td><%= @patient.next_of_kin  %></td>
   	</tr>
-  	<% end%>
   </tbody>
  </table>
-
- 

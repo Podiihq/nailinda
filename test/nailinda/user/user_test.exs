@@ -2,11 +2,10 @@ defmodule Nailinda.UserTest do
   use Nailinda.DataCase
 
   alias Nailinda.User
-
+  alias Nailinda.User.Patient
   describe "patients" do
-    alias Nailinda.User.Patient
-
-    @valid_attrs %{
+    
+   @valid_attrs %{
       first_name: "jackline",
       last_name: "kaunda",
       date_of_birth: ~D[2019-01-28],
@@ -15,7 +14,7 @@ defmodule Nailinda.UserTest do
       phone_number: 079_056_431,
       next_of_kin: "wayua"
     }
-    @invalid_attrs %{
+   @invalid_attrs %{
       first_name: nil,
       last_name: nil,
       date_of_birth: nil,
@@ -34,8 +33,7 @@ defmodule Nailinda.UserTest do
       assert patient.id_number == 4_576_890
       assert patient.phone_number == 079_056_431
       assert patient.next_of_kin == "wayua"
-    end
-
+  
     test "create user with invalid data to return a error" do 
      assert {:error, %Ecto.Changeset{}} = User.create_patient(@invalid_attrs)
     end

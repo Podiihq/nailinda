@@ -18,8 +18,10 @@ defmodule NailindaWeb.Router do
 
     get "/patient/new", PatientController, :new
     get "/", PageController, :index
-    get "/patient", PatientController, :show
     post "/patient", PatientController, :create
+    get "/patients", PatientController, :index
+    get "/patient/:id", PatientController, :show
+
   end
 
   # Other scopes may use custom stacks.
