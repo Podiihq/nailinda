@@ -2,9 +2,10 @@ defmodule NailindaWeb.PatientController do
   use NailindaWeb, :controller
   
   alias Nailinda.User
+  alias Nailinda.User.Patient
 
   def new(conn, _params) do
-    alias Nailinda.User.Patient
+    
     changeset = Patient.changeset(%Patient{}, %{})
     render(conn, "new.html", changeset: changeset)
   end 
@@ -23,8 +24,13 @@ defmodule NailindaWeb.PatientController do
     end   
   end
   
-   def show(conn, _params) do
+   def index(conn, _params) do
       patients = User.get_patient
-      render(conn, "show.html", patients: patients)
+      render(conn, "index.html", patients: patients)
+    end
+
+    def show(conn, %{"id" => id}) do
+      patient= User.get_patient_by_id(id)
+      render(conn, "show.html", patient: patient)
     end
 end

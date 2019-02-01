@@ -39,7 +39,6 @@ Oops, something went wrong! Please check the errors below.
 
 </div>
 <% end %>
-<%= link "view", to: Routes.patient_path(@conn, :show) %>
 
   		
   		
