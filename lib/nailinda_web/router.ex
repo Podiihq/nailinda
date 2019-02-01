@@ -16,7 +16,9 @@ defmodule NailindaWeb.Router do
   scope "/", NailindaWeb do
     pipe_through :browser
 
+    get "/patient/new", PatientController, :new
     get "/", PageController, :index
+    post "/patient", PatientController, :create
   end
 
   # Other scopes may use custom stacks.
