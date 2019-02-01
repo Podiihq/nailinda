@@ -20,6 +20,7 @@ defmodule NailindaWeb.Router do
     get "/", PageController, :index
     post "/users", PatientController, :create
     get "/patient", PatientController, :show
+    post "/patient", PatientController, :create
   end
 
   # Other scopes may use custom stacks.
