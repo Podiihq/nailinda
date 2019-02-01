@@ -4,13 +4,14 @@ defmodule Nailinda.User do
   """
   alias Nailinda.Repo
   alias Nailinda.User.Patient
-
-  def create_user(attrs) do
-    %Patient{}
-    |> Patient.changeset(attrs)
-    |> Repo.insert()
-  end
+  
+  def create_patient(attrs) do
+      %Patient{}
+      |>Patient.changeset(attrs)
+      |> Repo.insert()
+    end
   def get_patient do 
     Repo.all(Patient)
   end
+	
 end
