@@ -18,4 +18,4 @@ config :nailinda, Nailinda.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :phoenix_integration,
-	endpoint: Nailinda.Endpoint
+	endpoint: NailindaWeb.Endpoint
