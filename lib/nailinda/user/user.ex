@@ -8,5 +8,13 @@ defmodule Nailinda.User do
     	%Patient{}
     	|>Patient.changeset(attrs)
     	|> Repo.insert()
-    end
+	end
+	def get_patient_by_id(id) do
+		Repo.get(Patient, id)
+	end
+	def update_patient(patient, attrs) do
+		patient
+		|> Patient.changeset(attrs)
+		|> Repo.update()
+	end
 end
