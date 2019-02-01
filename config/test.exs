@@ -4,7 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :nailinda, NailindaWeb.Endpoint,
   http: [port: 4002],
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -14,8 +14,10 @@ config :nailinda, Nailinda.Repo,
   username: "postgres",
   password: "postgres",
   database: "nailinda_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :phoenix_integration,
 	endpoint: NailindaWeb.Endpoint
+
+config :nailinda, :sql_sandbox, true

@@ -1,6 +1,10 @@
 defmodule NailindaWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :nailinda
 
+  if Application.get_env(:nailinda, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
+
   socket "/socket", NailindaWeb.UserSocket,
     websocket: true,
     longpoll: false
