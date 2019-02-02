@@ -16,7 +16,7 @@ defmodule NailindaWeb.PatientController do
 	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
-	 	|>  redirect(to: "/")
+	 	|>  redirect(to: "/patients")
 
 
     {:error, %Ecto.Changeset{} = changeset} ->
