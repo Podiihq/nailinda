@@ -4,6 +4,7 @@ defmodule Nailinda.User do
 	"""
 	alias Nailinda.Repo
 	alias Nailinda.User.Patient
+	alias Nailinda.User.Doctor
 	def create_patient(attrs) do
     	%Patient{}
     	|>Patient.changeset(attrs)
@@ -16,5 +17,11 @@ defmodule Nailinda.User do
 		patient
 		|> Patient.changeset(attrs)
 		|> Repo.update()
+	end
+
+	def create_doctor(attrs) do
+		%Doctor{}
+		|> Doctor.changeset(attrs)
+		|>Repo.insert()
 	end
 end
