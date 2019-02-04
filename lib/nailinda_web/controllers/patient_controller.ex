@@ -25,7 +25,7 @@ defmodule NailindaWeb.PatientController do
   end
   
    def index(conn, _params) do
-      patients = User.get_patient
+      patients = User.get_all_patients
       render(conn, "index.html", patients: patients)
     end
 
