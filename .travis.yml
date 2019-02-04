@@ -9,6 +9,7 @@ services:
 install:
   - mix local.rebar --force
   - mix local.hex --force
+  - mix deps.compile
   - mix deps.get
 
 before_script:
