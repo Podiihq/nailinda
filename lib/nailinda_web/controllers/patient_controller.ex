@@ -13,14 +13,14 @@ defmodule NailindaWeb.PatientController do
 	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
-	 	|>  redirect(to: "/")
+	 	|>  redirect(to: "/patients")
     {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end   
   end
   
    def index(conn, _params) do
-      patients = User.get_patient
+      patients = User.get_all_patients
       render(conn, "index.html", patients: patients)
     end
 
