@@ -18,6 +18,6 @@ defmodule Nailinda.User do
          Repo.get(Patient, id)
      end
      def delete_patient(%Patient{} = patient) do
-         Repo.delete(patient)
+        Repo.delete(patient)
      end
 end

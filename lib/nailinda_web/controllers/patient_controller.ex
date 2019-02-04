@@ -13,7 +13,7 @@ defmodule NailindaWeb.PatientController do
 	 	{:ok, %Patient{} = patient} ->
 	 	conn
 	 	|>  put_flash(:info, "#{patient.first_name}  created successfuly")
-	 	|>  redirect(to: "/patients")
+	 	|>  redirect(to: "/patient")
     {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end   
@@ -25,14 +25,16 @@ defmodule NailindaWeb.PatientController do
     end
 
     def show(conn, %{"id" => id}) do
-      patient= User.get_patient_by_id(id)
+      patient = User.get_patient_by_id(id)
       render(conn, "show.html", patient: patient)
     end
+
     def delete(conn, %{"id" => id}) do
-      patient= User.get_patient_by_id(id)
-      {:ok, _patient} =  User.delete_patient(patient)
+      id
+      |> User.get_patient_by_id()
+      |> User.delete_patient()
      conn
-     |>  put_flash(:info, "#{patient.id}  Deleted successfuly")
+     |>  put_flash(:info, " Deleted successfuly")
      |>  redirect(to: "/")
     end
 end
