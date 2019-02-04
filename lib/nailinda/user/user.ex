@@ -10,7 +10,8 @@ defmodule Nailinda.User do
     	|> Repo.insert()
     end
     def get_all_patients do
-    	Repo.all(Patient)
+        Patient
+    	|> Repo.all
     end
 
     def get_patient_by_id(id) do
