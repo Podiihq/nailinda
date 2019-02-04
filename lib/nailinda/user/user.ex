@@ -19,7 +19,7 @@ defmodule Nailinda.User do
 		|> Repo.update()
 	end
 
-    end
+    
     def get_all_patients do
         Patient
     	|> Repo.all
