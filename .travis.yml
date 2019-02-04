@@ -13,7 +13,8 @@ install:
   - mix deps.get
 
 before_script:
-  - mix ecto.create, ecto.migrate
+  - mix ecto.create
+  - mix ecto.migrate
 
 script:
   - mix test
