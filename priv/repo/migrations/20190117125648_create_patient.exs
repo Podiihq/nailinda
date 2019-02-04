@@ -12,7 +12,8 @@ defmodule Nailinda.Repo.Migrations.CreatePatient do
       add :next_of_kin, :string
 
       timestamps()
-     end
-     create unique_index(:patients, [:id_number]) 
+    end
+
+    create unique_index(:patients, [:id_number])
   end
 end
