@@ -9,7 +9,7 @@ defmodule Nailinda.User do
     	|>Patient.changeset(attrs)
     	|> Repo.insert()
     end
-    def get_patient do
+    def get_all_patients do
     	Repo.all(Patient)
     end
 
