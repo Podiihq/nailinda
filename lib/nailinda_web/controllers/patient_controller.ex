@@ -28,4 +28,11 @@ defmodule NailindaWeb.PatientController do
       patient= User.get_patient_by_id(id)
       render(conn, "show.html", patient: patient)
     end
+    def delete(conn, %{"id" => id}) do
+      patient= User.get_patient_by_id(id)
+      {:ok, _patient} =  User.delete_patient(patient)
+     conn
+     |>  put_flash(:info, "#{patient.id}  Deleted successfuly")
+     |>  redirect(to: "/")
+    end
 end

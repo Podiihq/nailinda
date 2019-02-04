@@ -1,5 +1,4 @@
-<h2>Patient details</h2>
-
+<b><h2>Patient details</h2></b> 
  <table>
  	<thead>
     <th>ID</th>
