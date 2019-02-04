@@ -6,13 +6,11 @@ elixir:
 services:
   - postgresql
   
-install:
+before_script:
   - mix local.rebar --force
   - mix local.hex --force
   - mix deps.clean ranch
   - mix deps.get
-
-before_script:
   - mix ecto.create
   - mix ecto.migrate
 
