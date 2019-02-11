@@ -10,5 +10,4 @@ before_script:
   - mix ecto.create
   - mix ecto.migrate
 script:
-  - mix do deps.get, compile 
   - mix test
