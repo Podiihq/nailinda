@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Podiihq/nailinda.svg?branch=fix-travis-errors)](https://travis-ci.com/Podiihq/nailinda)
+
 # Project Name: Nailinda
 
 ## Description
