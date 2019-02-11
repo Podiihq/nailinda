@@ -21,6 +21,9 @@ defmodule NailindaWeb.Router do
     get "/patient/:id", PatientController, :edit
     put "/patient/:id", PatientController, :update
     post "/patient", PatientController, :create
+    get "/patients", PatientController, :index
+    get "/patient/:id", PatientController, :show
+    
   end
 
   # Other scopes may use custom stacks.

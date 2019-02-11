@@ -1,4 +1,3 @@
 defmodule NailindaWeb.PatientView do
-	use NailindaWeb, :view
-
+  use NailindaWeb, :view
 end

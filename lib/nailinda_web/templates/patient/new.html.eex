@@ -33,7 +33,11 @@ Oops, something went wrong! Please check the errors below.
 <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
  <%= error_tag f, :next_of_kin %>
 </div>
+<div>
+	
 <%= submit "Create User" %>
+
+</div>
 <% end %>
 
   		
