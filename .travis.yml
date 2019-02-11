@@ -10,6 +10,8 @@ before_script:
   - mix local.rebar --force
   - mix local.hex --force
   - mix deps.get
+  - mix deps.compile
+  - mix deps.clean
   - mix ecto.create
   - mix ecto.migrate
 
