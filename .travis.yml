@@ -9,11 +9,7 @@ services:
 before_script:
   - mix local.rebar --force
   - mix local.hex --force
-  - rm -rf deps
-  - rm -rf _build
   - mix deps.get
-  - mix ecto.create
-  - mix ecto.migrate
 
 script:
   - mix test
