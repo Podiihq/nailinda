@@ -9,5 +9,7 @@ before_script:
   - mix local.rebar --force
   - mix local.hex --force
   - mix deps.get
+  - mix ecto.create
+  - mix ecto.migrate
 script:
   - mix test
