@@ -1,7 +1,16 @@
 language: elixir
 elixir:
-  - 1.5
-env:
-  - MIX_ENV=test
+  - 1.8
+services:
+    - postgresql
+
+before_script:
+  - mix local.rebar --force
+  - mix local.hex --force
+  - mix deps.get
+  - mix ecto.create
+  - mix ecto.migrate
+
 script:
-  - mix do deps.get, compile --warnings-as-errors
+  - mix do deps.get, compile 
+  - mix test
