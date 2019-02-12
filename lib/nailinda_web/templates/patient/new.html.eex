@@ -1,47 +1,49 @@
 <h1>Patient Details</h1>
-<%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
-<%= if @changeset.action do %>
-<div class = "alert alert-danger">
-Oops, something went wrong! Please check the errors below.
-</div>
-<% end %>
-<div>
-<%= text_input f, :first_name, placeholder: "First Name" %>
- <%= error_tag f, :first_name %>
-</div>
-<div>
-<%= text_input f, :last_name, placeholder: "Last Name" %>
- <%= error_tag f, :last_name %>
-</div>
-<div>
-<%= date_select f, :date_of_birth, placeholder: "Date Of Birth" %>
- <%= error_tag f, :date_of_birth%>
-</div>
-<div>
-<%= inputs_for f, :location, fn lf -> %>
-<%= text_input lf, :location, placeholder: "Location" %>
-<%= error_tag lf, :location %>
-<% end %>
-</div>
-<div>
-<%= text_input f, :id_number, placeholder: "Id Number" %>
- <%= error_tag f, :id_number %>
-</div>
-<div>
-<%= text_input f, :phone_number, placeholder: "Phone Number" %>
- <%= error_tag f, :phone_number %>
-</div>
-<div>
-<%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
- <%= error_tag f, :next_of_kin %>
-</div>
-<div>
-	
-<%= submit "Create User" %>
+ <%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
+  <%= if @changeset.action do %>
+  <div class = "alert alert-danger">
+  Oops, something went wrong! Please check the errors below.
+  </div>
+  <% end %>
+  <div>
+  <%= text_input f, :first_name, placeholder: "First Name" %>
+   <%= error_tag f, :first_name %>
+  </div>
 
-</div>
-<% end %>
+  <div>
+  <%= text_input f, :last_name, placeholder: "Last Name" %>
+   <%= error_tag f, :last_name %>
+  </div>
 
-  		
-  		
-  		
+  <div>
+  <%= date_select f, :date_of_birth, placeholder: "Date Of Birth" %>
+   <%= error_tag f, :date_of_birth%>
+  </div>
+
+  <!-- <div>
+  <%= inputs_for f, :location, fn lf -> %>
+  <%= text_input lf, :location, placeholder: "Location" %>
+  <%= error_tag lf, :location %>
+  <% end %>
+  </div> -->
+
+  <div>
+  <%= text_input f, :id_number, placeholder: "Id Number" %>
+   <%= error_tag f, :id_number %>
+  </div>
+
+  <div>
+  <%= text_input f, :phone_number, placeholder: "Phone Number" %>
+   <%= error_tag f, :phone_number %>
+  </div>
+
+  <div>
+  <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
+   <%= error_tag f, :next_of_kin %>
+  </div>
+  <div>
+
+  <%= submit "Create User" %>
+
+  </div>
+<% end %>
