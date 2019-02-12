@@ -13,7 +13,7 @@ defmodule Nailinda.User.Patient do
     field(:id_number, :integer)
     field(:phone_number, :integer)
     field(:next_of_kin, :string)
-    has_one(:location, Location)
+    belongs_to(:location, Location)
 
     timestamps()
   end

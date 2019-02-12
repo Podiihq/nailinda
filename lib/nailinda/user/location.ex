@@ -5,14 +5,14 @@ defmodule Nailinda.User.Location do
 
   schema "locations" do
     field :location, :string
-    belongs_to(:patient, Patient)
+    has_one(:patient, Patient)
     timestamps()
   end
 
   @doc false
   def location_changeset(location, attrs) do
     location
-    |> cast(attrs, [:location, :patient_id])
-    |> validate_required([:location, :patient_id])
+    |> cast(attrs, [:location])
+    |> validate_required([:location])
   end
 end
