@@ -11,7 +11,7 @@ defmodule Nailinda.User.Patient do
     field(:date_of_birth, :date)
     field(:location, :string)
     field(:id_number, :integer)
-    field(:phone_number, :integer)
+    field(:phone_number, :string)
     field(:next_of_kin, :string)
 
     timestamps()
