@@ -20,7 +20,6 @@
   	<td><%= @patient.last_name  %></td>
   	<td><%= @patient.date_of_birth %></td>
   	<td><%= @patient.id_number %></td>
-  	<td><%= @patient.location %></td>
   	<td><%= @patient.phone_number %></td>
   	<td><%= @patient.next_of_kin  %></td>
   	</tr>

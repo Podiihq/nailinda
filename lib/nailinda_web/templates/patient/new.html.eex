@@ -18,8 +18,8 @@ Oops, something went wrong! Please check the errors below.
  <%= error_tag f, :date_of_birth%>
 </div>
 <div>
-<%= text_input f,:location , placeholder: " Location" %>
- <%= error_tag f, :location %>
+<%= text_input f,:location_id , placeholder: " Location" %>
+ <%= error_tag f, :location_id %>
 </div>
 <div>
 <%= text_input f, :id_number, placeholder: "Id Number" %>
