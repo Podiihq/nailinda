@@ -5,7 +5,7 @@ defmodule Nailinda.User do
 	alias Nailinda.Repo
 	alias Nailinda.User.Patient
     alias Nailinda.User.Location
-    
+
 	def create_patient(attrs) do
     	%Patient{}
     	|>Patient.changeset(attrs)
@@ -24,7 +24,7 @@ defmodule Nailinda.User do
         %Location{}
         |> Location.changeset(%{location: location})
         |> Repo.insert()
-        
-        Redis.geoadd(location)
+
+        # Redis.geoadd(location)
     end
 end

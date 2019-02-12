@@ -10,7 +10,7 @@ defmodule Nailinda.User.Location do
   end
 
   @doc false
-  def changeset(location, attrs) do
+  def location_changeset(location, attrs) do
     location
     |> cast(attrs, [:location, :patient_id])
     |> validate_required([:location, :patient_id])

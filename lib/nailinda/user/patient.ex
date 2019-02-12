@@ -18,18 +18,23 @@ defmodule Nailinda.User.Patient do
     timestamps()
   end
 
-  def changeset(patient, attrs) do
+  def changeset(patient, attrs \\ %{}) do
     patient
-    # |> cast(attrs, [
-    #   :first_name,
-    #   :last_name,
-    #   :date_of_birth,
-    #   :id_number,
-    #   :phone_number,
-    #   :next_of_kin
-    # ])
+    |> cast(attrs, [
+      :first_name,
+      :last_name,
+      :date_of_birth,
+      :id_number,
+      :phone_number,
+      :location,
+      :next_of_kin
+    ])
+    |> validate_required([:first_name, :last_name, :date_of_birth, :location_id])
+  end
+
+  def registration_changeset(patient, attrs \\ %{}) do
+    patient
     |> changeset(attrs)
-    |> cast_assoc(:location, with: &Location.changeset/2, required: true)
-    # |> validate_required([:first_name, :last_name, :date_of_birth])
+    |> cast_assoc(:location, with: &Location.location_changeset/2, required: true)
   end
  end
