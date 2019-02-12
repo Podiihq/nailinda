@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Podiihq/nailinda.svg?branch=develop)](https://travis-ci.com/Podiihq/nailinda)
+
 # Project Name: Nailinda
 
 ## Description
