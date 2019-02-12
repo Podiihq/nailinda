@@ -11,7 +11,7 @@ defmodule Nailinda.User.Patient do
     field(:last_name, :string)
     field(:date_of_birth, :date)
     field(:id_number, :integer)
-    field(:phone_number, :integer)
+    field(:phone_number, :string)
     field(:next_of_kin, :string)
     belongs_to(:location, Location)
 

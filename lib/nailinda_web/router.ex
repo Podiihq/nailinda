@@ -18,6 +18,8 @@ defmodule NailindaWeb.Router do
 
     get "/patient/new", PatientController, :new
     get "/", PageController, :index
+    get "/patient/:id", PatientController, :edit
+    put "/patient/:id", PatientController, :update
     post "/patient", PatientController, :create
     get "/patients", PatientController, :index
     get "/patient/:id", PatientController, :show

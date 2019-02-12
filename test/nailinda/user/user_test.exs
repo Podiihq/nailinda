@@ -12,7 +12,7 @@ defmodule Nailinda.UserTest do
       date_of_birth: ~D[2019-01-28],
       location: "Kisumu",
       id_number: 4_576_890,
-      phone_number: 079_056_431,
+      phone_number: "079056431",
       next_of_kin: "wayua"
     }
     @invalid_attrs %{
@@ -33,12 +33,12 @@ defmodule Nailinda.UserTest do
       assert patient.date_of_birth == ~D[2019-01-28]
       assert patient.location == "Kisumu"
       assert patient.id_number == 4_576_890
-      assert patient.phone_number == 079_056_431
+      assert patient.phone_number == "079056431"
       assert patient.next_of_kin == "wayua"
     end
 
 
-    test "create user with invalid data to return a error" do 
+    test "create user with invalid data to return a error" do
      assert {:error, %Ecto.Changeset{}} = User.create_patient(@invalid_attrs)
     end
   end
