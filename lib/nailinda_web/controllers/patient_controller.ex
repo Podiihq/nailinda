@@ -50,6 +50,16 @@ defmodule NailindaWeb.PatientController do
   			conn
   			|>put_flash(:error, "Updating failed")
   			|> render("edit.html", changeset: changeset, patient: patient)
-  	end
-	end
+		end
+  end
+
+	def delete(conn, %{"id" => id}) do
+    id
+     |> User.get_patient_by_id()
+		 |> User.delete_patient()
+
+    conn
+     |>  put_flash(:info, " Deleted successfuly")
+     |>  redirect(to: "/")
+    end
 end
