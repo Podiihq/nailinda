@@ -1,5 +1,6 @@
 defmodule Nailinda.MixProject do
   use Mix.Project
+  alias Nailinda.Application
 
   def project do
     [
@@ -19,7 +20,7 @@ defmodule Nailinda.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Nailinda.Application, []},
+      mod: {Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -42,7 +43,8 @@ defmodule Nailinda.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:credo, "~> 1.0"}
     ]
   end
 
@@ -56,7 +58,12 @@ defmodule Nailinda.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      linting: [
+        "compile --warnings-as-errors --force",
+        "format --check-formatted",
+        "credo"
+      ]
     ]
   end
 end
