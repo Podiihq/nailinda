@@ -4,6 +4,7 @@ defmodule Nailinda.User do
   """
   alias Nailinda.Repo
   alias Nailinda.User.Patient
+  alias Nailinda.User.Location
 
   def create_patient(attrs) do
     %Patient{}

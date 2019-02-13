@@ -26,10 +26,9 @@ defmodule Nailinda.User.Patient do
       :date_of_birth,
       :id_number,
       :phone_number,
-      :location,
       :next_of_kin
     ])
-    |> validate_required([:first_name, :last_name, :date_of_birth, :location_id])
+    |> validate_required([:first_name, :last_name, :date_of_birth])
   end
 
   def registration_changeset(patient, attrs \\ %{}) do
