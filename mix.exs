@@ -44,7 +44,8 @@ defmodule Nailinda.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:credo, "~> 1.0"}
+      {:credo, "~> 1.0"},
+      {:redis, "~> 0.1"}
     ]
   end
 
