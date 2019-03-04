@@ -14,5 +14,5 @@ config :nailinda, Nailinda.Repo,
   username: "postgres",
   password: "postgres",
   database: "nailinda_test",
-  hostname: "db",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
