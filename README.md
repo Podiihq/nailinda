@@ -10,3 +10,5 @@
   * Helping solve challenges faced by pregnant women who are unable to get medical services.
   * Helping users in need medical services to trace nearby health amenities in relation to their location.
 
+  *Run 'mix linting' to check for code formatting before pushing
+
