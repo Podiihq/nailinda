@@ -2,8 +2,8 @@ defmodule Nailinda.User.Patient do
   @moduledoc """
   patients module
   """
-  use Ecto.Schema
   import Ecto.Changeset
+  use Ecto.Schema
 
   schema "patients" do
     field(:first_name, :string)
@@ -11,7 +11,7 @@ defmodule Nailinda.User.Patient do
     field(:date_of_birth, :date)
     field(:location, :string)
     field(:id_number, :integer)
-    field(:phone_number, :integer)
+    field(:phone_number, :string)
     field(:next_of_kin, :string)
 
     timestamps()
@@ -30,4 +30,4 @@ defmodule Nailinda.User.Patient do
     ])
     |> validate_required([:first_name, :last_name, :date_of_birth, :location])
   end
- end
+end
