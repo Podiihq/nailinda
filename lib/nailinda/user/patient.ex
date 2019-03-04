@@ -30,4 +30,4 @@ defmodule Nailinda.User.Patient do
     ])
     |> validate_required([:first_name, :last_name, :date_of_birth, :location])
   end
- end
+end

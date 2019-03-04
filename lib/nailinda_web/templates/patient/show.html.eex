@@ -22,7 +22,7 @@
   	<td><%= @patient.location %></td>
   	<td><%= @patient.phone_number %></td>
     <td><%= @patient.next_of_kin  %></td>
-    <td><%=link "Delete", to: Routes.patient_path(@conn, :delete, @patient.id), method: "delete" %></td>
+    <td><%=link "Delete", to: Routes.patient_path(@conn, :delete, @patient.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
 
   	</tr>
   </tbody>
