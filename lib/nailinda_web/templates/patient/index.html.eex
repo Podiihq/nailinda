@@ -1,31 +1,31 @@
-<h2>Patient details</h2>
-
+<b><h2>Patient details</h2></b> 
  <table>
- 	<thead>
+  <thead>
     <th>ID</th>
- 		<th> First Name</th>
- 		<th> Last name</th>
- 		<th>Date of birth</th>
- 		<th>Id number</th>
- 		<th>Phone number</th>
-    <th>Next of kin</th>
+    <th> First Name</th>
+    <th> Last name</th>
+    <th>Date of birth</th>
+    <th>Id number</th>
     <th>Location</th>
+    <th>Phone number</th>
+        <th>Next of kin</th>
   </thead>
 
   <tbody>
-  	<%= for patient <- @patients  do %>
-  	<tr>
+    <%= for patient <- @patients  do %>
+    <tr>
       <td><%=patient.id %></td>
-  	<td><%= patient.first_name %> </td>
-  	<td><%= patient.last_name  %></td>
-  	<td><%= patient.date_of_birth %></td>
-  	<td><%= patient.id_number %></td>
-  	<td><%= patient.phone_number %></td>
-  	<td><%= patient.next_of_kin  %></td>
-    <td></td>
-    <td><%=link "view", to: Routes.patient_path(@conn, :show, patient.id)%></td>
-  	</tr>
-  	<% end%>
+    <td><%= patient.first_name %> </td>
+    <td><%= patient.last_name  %></td>
+    <td><%= patient.date_of_birth %></td>
+    <td><%= patient.id_number %></td>
+    <td><%= patient.location %></td>
+    <td><%= patient.phone_number %></td>
+    <td><%= patient.next_of_kin  %></td>
+    <td><%=link "view", to: Routes.patient_path(@conn, :show, patient)%></td>
+
+    </tr>
+    <% end%>
   </tbody>
  </table>
 

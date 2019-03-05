@@ -2,9 +2,8 @@ defmodule Nailinda.User.Patient do
   @moduledoc """
   patients module
   """
-  use Ecto.Schema
   import Ecto.Changeset
-  alias Nailinda.User.Location
+  use Ecto.Schema
 
   schema "patients" do
     field(:first_name, :string)
@@ -36,4 +35,4 @@ defmodule Nailinda.User.Patient do
     |> changeset(attrs)
     |> cast_assoc(:location, with: &Location.location_changeset/2, required: true)
   end
- end
+end
