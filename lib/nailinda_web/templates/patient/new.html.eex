@@ -36,12 +36,8 @@
     <%= error_tag f, :next_of_kin %>
     </div>
     <div>
-        
+    
     <%= submit "Create Patient" %>
 
     </div>
 <% end %>
-
-  		
-  		
-  		
