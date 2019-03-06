@@ -12,7 +12,11 @@ defmodule Nailinda.User do
     |> Repo.insert()
 
     %{"location" => location} = attrs
-    Redis.save_user(attrs)
+    [longitude, latitude, member] = String.split(location)
+    long = String.to_float(longitude)
+    lat = String.to_float(latitude)
+
+    Redis.save_user(long, lat, member)
   end
 
   def update_patient(patient, attrs) do
@@ -29,5 +33,9 @@ defmodule Nailinda.User do
   def get_patient_by_id(id) do
     Patient
     |> Repo.get(id)
+  end
+
+  def delete_patient(%Patient{} = patient) do
+    Repo.delete(patient)
   end
 end
