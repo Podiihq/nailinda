@@ -4,11 +4,15 @@ defmodule Nailinda.User do
   """
   alias Nailinda.Repo
   alias Nailinda.User.Patient
+  alias Nailinda.Redis
 
   def create_patient(attrs) do
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
+
+    %{"location" => location} = attrs
+    Redis.save_user(attrs)
   end
 
   def update_patient(patient, attrs) do
