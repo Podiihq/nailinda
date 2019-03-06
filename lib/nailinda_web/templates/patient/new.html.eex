@@ -21,12 +21,7 @@
    <%= error_tag f, :date_of_birth%>
   </div>
 
-  <div>
-  <%= inputs_for f, :location, fn lf -> %>
-  <%= text_input lf, :location, placeholder: "Location" %>
-  <%= error_tag lf, :location %>
-  <% end %>
-  </div> 
+  
   
   <div>
   <%= text_input f, :id_number, placeholder: "Id Number" %>
@@ -42,8 +37,14 @@
   <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
    <%= error_tag f, :next_of_kin %>
   </div>
+  <div id="map">
+    
+  </div>
   <div>     
     <%= submit "Create Patient" %>
   </div>
+
 <% end %>
+
+
 
