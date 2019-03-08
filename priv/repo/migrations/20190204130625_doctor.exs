@@ -14,6 +14,7 @@ defmodule Nailinda.Repo.Migrations.Doctor do
 
       timestamps()
     end
-     create unique_index(:doctors, [:id_number]) 
+
+    create unique_index(:doctors, [:id_number])
   end
 end

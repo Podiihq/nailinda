@@ -4,7 +4,7 @@ defmodule Nailinda.User do
   """
   alias Nailinda.Repo
   alias Nailinda.User.Patient
-  alias Nailinda.Redis
+  alias Nailinda.User.Doctor
 
   def create_patient(attrs) do
     %Patient{}
@@ -30,5 +30,11 @@ defmodule Nailinda.User do
 
   def delete_patient(%Patient{} = patient) do
     Repo.delete(patient)
+  end
+
+  def create_doctor(attrs) do
+    %Doctor{}
+    |> Doctor.changeset(attrs)
+    |> Repo.insert()
   end
 end

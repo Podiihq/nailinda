@@ -20,6 +20,7 @@ defmodule NailindaWeb.Router do
     resources "/patient", PatientController
     resources "/doctor", DoctorController
   end
+
   # Other scopes may use custom stacks.
   # scope "/api", NailindaWeb do
   #   pipe_through :api
