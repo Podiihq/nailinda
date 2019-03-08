@@ -16,11 +16,6 @@ defmodule NailindaWeb.PatientController do
         |> put_flash(:info, "#{patient.first_name}  created successfuly")
         |> redirect(to: "/patient")
 
-     {:ok, value} ->
-       conn
-       |> put_flash(:info, "saved successfuly to both Redis and Postgres")
-       |> redirect(to: "/patient")
-
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

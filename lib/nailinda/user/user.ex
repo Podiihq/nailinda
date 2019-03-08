@@ -10,13 +10,6 @@ defmodule Nailinda.User do
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
-
-    %{"location" => location} = attrs
-    [longitude, latitude, member] = String.split(location)
-    long = String.to_float(longitude)
-    lat = String.to_float(latitude)
-
-    Redis.save_user(long, lat, member)
   end
 
   def update_patient(patient, attrs) do
