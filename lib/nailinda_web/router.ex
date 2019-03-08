@@ -18,7 +18,9 @@ defmodule NailindaWeb.Router do
 
     get "/", PageController, :index
     resources "/patient", PatientController
+    resources "/receptionist", ReceptionistController
   end
+
   # Other scopes may use custom stacks.
   # scope "/api", NailindaWeb do
   #   pipe_through :api
