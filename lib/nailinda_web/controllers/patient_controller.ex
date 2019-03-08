@@ -31,7 +31,7 @@ defmodule NailindaWeb.PatientController do
     render(conn, "show.html", patient: patient)
   end
 
- def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"id" => id}) do
     patient = User.get_patient_by_id(id)
     changeset = Patient.changeset(patient, %{})
     render(conn, "edit.html", patient: patient, changeset: changeset)
