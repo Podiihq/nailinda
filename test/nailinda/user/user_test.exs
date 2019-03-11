@@ -3,6 +3,7 @@ defmodule Nailinda.UserTest do
 
   alias Nailinda.User
   alias Nailinda.User.Patient
+  alias Nailinda.User.Receptionist
 
   describe "users" do
     @valid_attrs %{
