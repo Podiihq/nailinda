@@ -56,12 +56,14 @@
           marker = new google.maps.Marker({
             position: event.latLng,
             map: map
+
           });
 
           var latlng = marker.getPosition();
+          console.log(marker);
           document.getElementById("lat").innerHTML = latlng.lat();
           document.getElementById("long").innerHTML = latlng.lng();
-          
+          document.getElementById("location").value = latlng.lat() + " " + latlng.lng();
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
             

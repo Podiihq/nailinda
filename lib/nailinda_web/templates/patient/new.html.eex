@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <input id="location" type="text" placeholder="Location">
+    
+  </div>
+
+  <div>
   <%= text_input f, :phone_number, placeholder: "Phone Number" %>
    <%= error_tag f, :phone_number %>
   </div>

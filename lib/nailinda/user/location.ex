@@ -5,7 +5,6 @@ defmodule Nailinda.User.Location do
 
   schema "locations" do
     field :location, :string
-    has_one(:patient, Patient)
     timestamps()
   end
 
