@@ -64,10 +64,9 @@
       }
 
       function saveData() {
-        var name = escape(document.getElementById('name').value);
         var address = escape(document.getElementById('address').value);
         var latlng = marker.getPosition();
-        var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
+        var url = 'phpsqlinfo_addrow.php?name=' + '&address=' + address +
                   '&type=' + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
 
         downloadUrl(url, function(data, responseCode) {
