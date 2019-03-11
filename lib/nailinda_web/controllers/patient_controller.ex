@@ -9,6 +9,18 @@ defmodule NailindaWeb.PatientController do
     render(conn, "new.html", changeset: changeset)
   end
 
+  def create(conn, %{"patient" => patient_params}) do
+    case User.create_patient(patient_params) do
+      {:ok, %Patient{} = patient} ->
+        conn
+        |> put_flash(:info, "#{patient.first_name}  created successfuly")
+        |> redirect(to: "/patient")
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
+  end
+
   def index(conn, _params) do
     patients = User.get_all_patients()
     render(conn, "index.html", patients: patients)
@@ -17,18 +29,6 @@ defmodule NailindaWeb.PatientController do
   def show(conn, %{"id" => id}) do
     patient = User.get_patient_by_id(id)
     render(conn, "show.html", patient: patient)
-  end
-
-  def create(conn, %{"patient" => patient_params}) do
-    case User.create_patient(patient_params) do
-      {:ok, %Patient{} = patient} ->
-        conn
-        |> put_flash(:info, "#{patient.first_name}  created successfuly")
-        |> redirect(to: "/patients")
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
   end
 
   def edit(conn, %{"id" => id}) do
@@ -51,5 +51,14 @@ defmodule NailindaWeb.PatientController do
         |> put_flash(:error, "Updating failed")
         |> render("edit.html", changeset: changeset, patient: patient)
     end
+  end
+
+  def delete(conn, %{"id" => id}) do
+    patient = User.get_patient_by_id(id)
+    {:ok, _patient} = User.delete_patient(patient)
+
+    conn
+    |> put_flash(:info, " Deleted successfuly")
+    |> redirect(to: "/")
   end
 end
