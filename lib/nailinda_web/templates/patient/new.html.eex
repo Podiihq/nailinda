@@ -20,8 +20,6 @@
   <%= date_select f, :date_of_birth, placeholder: "Date Of Birth" %>
    <%= error_tag f, :date_of_birth%>
   </div>
-
-  
   
   <div>
   <%= text_input f, :id_number, placeholder: "Id Number" %>
@@ -37,19 +35,19 @@
   <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
    <%= error_tag f, :next_of_kin %>
   </div>
+
   <div id="map" height="460px" width="100%"></div>
-  <div id="form">
+    <div id="form">
       <table>
+      <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
       <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
                  <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
       </table>
     </div>
     <div id="message">Location saved</div>
+
   <div>     
     <%= submit "Create Patient" %>
   </div>
-
 <% end %>
-
-
 

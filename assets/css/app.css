@@ -1,8 +1,7 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
-#map {
+
+ #map {
         height: 300px;
       }
-      
-      
