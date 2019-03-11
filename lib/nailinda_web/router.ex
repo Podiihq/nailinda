@@ -19,6 +19,7 @@ defmodule NailindaWeb.Router do
     get "/", PageController, :index
     resources "/patient", PatientController
     resources "/receptionist", ReceptionistController
+    resources "/doctor", DoctorController
   end
 
   # Other scopes may use custom stacks.
