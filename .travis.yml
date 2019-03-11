@@ -1,22 +1,15 @@
 language: elixir
 elixir:
-- 1.8
+  - 1.8
 env:
-- MIX_ENV=test
+  - MIX_ENV=test
 services:
-- postgresql
+    - postgresql
 before_script:
-- mix local.rebar --force
-- mix local.hex --force
-- mix deps.get
-- mix ecto.create
-- mix ecto.migrate
+  - mix local.rebar --force
+  - mix local.hex --force
+  - mix deps.get
+  - mix ecto.create
+  - mix ecto.migrate
 script:
 - mix test
-deploy:
-  provider: heroku
-  api_key:
-    secure: hJiiqAg6zD2PhH+9+3bn7YHozpGr+XQr/lzsHtgmRBI/tOYkglDxRJo3G+pC3RayYNH6BiSFfz5HpbcioOc1IgRvSLvrC1jiNJ99zSPcgY7OKJVTGV/VN8CIiw6NasdsrGUPohS6r3CilyMAfdH49qfll2FUmf541uGWJwmheOKFc9NboWKm9O0SdqOFt+s3funKJomGh5SZVA6NYVLmQDxetmnoiXVXyA4zrtJDVL5623F/IamZRm0cm1jb3wNuzViPrj5qV3dxbznqILteb4kNo5logNVAKogRIkehmNE8XFbQisq7cbxnetgTkYV1WUd/O2uDZ5l4vURZKrjz56Fnt8fouztCIWXJiWh5sfWDmfaA8n7EjPSrpd40qJJgwuKfc7giHkKdfhQLZoaOk3Vo55OcpE7l2x77cHpAiFvrnqzXMD8rt4pdblItONEEeo1baL1Zx2iIqemKyU4CUBymvwKXri9Ub8iRz49Ocq4cdvfyi40LtPSIfjn8ChL0g8ZePNtEykCacTFoMGJnzUV0NrcHE9rX0Gk1WkeffQokwYnimTOBI1IvNSrkXm8xjbUmac2bzkx+3g7LLOrWs/+eaQ5+ajH9pILn6xOWIBhV6yJ/t7lWpQzKoIoUQN3KwwECLuI9OzV160Pc0dmYW2XWgApfs8qTvsGTdOnNo84=
-  app: nailinda
-  on: develop
-    repo: Podiihq/nailinda
