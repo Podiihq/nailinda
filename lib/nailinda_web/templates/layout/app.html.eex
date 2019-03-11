@@ -35,6 +35,8 @@
       var infowindow;
       var messagewindow;
 
+
+
       function initMap() { 
         var kisumu = {lat: -0.10221, lng: 34.76171};
         map = new google.maps.Map(document.getElementById('map'), {
@@ -56,19 +58,24 @@
             map: map
           });
 
-
+          var latlng = marker.getPosition();
+          document.getElementById("lat").innerHTML = latlng.lat();
+          document.getElementById("long").innerHTML = latlng.lng();
+          
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
+            
           });
         });
       }
 
+
       function saveData() {
         var address = escape(document.getElementById('address').value);
         var latlng = marker.getPosition();
-        var url = 'phpsqlinfo_addrow.php?name=' + '&address=' + address +
+        var url = 'location=&address=' + address +
                   '&type=' + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
-
+        
         downloadUrl(url, function(data, responseCode) {
 
           if (responseCode == 200 && data.length <= 1) {

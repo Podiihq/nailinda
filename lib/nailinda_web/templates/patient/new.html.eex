@@ -39,6 +39,9 @@
   <div id="map" height="460px" width="100%"></div>
     <div id="form">
       <table>
+        <tr>Longitude: <p id="long"></p>
+          </tr>
+          <tr>Latitude: <p id="lat"></p></tr>
       <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
                  <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
       </table>
