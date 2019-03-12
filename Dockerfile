@@ -1,4 +1,4 @@
-FROM elixir:1.7.3
+FROM elixir:1.5-alpine
 
 RUN mkdir /app
 

@@ -12,16 +12,16 @@
   </thead>
 
   <tbody>
-    <%= for patient <- @patients  do %>
-    <tr>
-      <td><%=patient.id %></td>
-    <td><%= patient.first_name %> </td>
-    <td><%= patient.last_name  %></td>
-    <td><%= patient.date_of_birth %></td>
-    <td><%= patient.id_number %></td>
-    <td><%= patient.location %></td>
-    <td><%= patient.phone_number %></td>
-    <td><%= patient.next_of_kin  %></td>
+  	<%= for patient <- @patients  do %>
+  	<tr>
+     <td><%=patient.id %></td>
+  	<td><%= patient.first_name %> </td>
+  	<td><%= patient.last_name  %></td>
+  	<td><%= patient.date_of_birth %></td>
+  	<td><%= patient.id_number %></td>
+  	<td><%= patient.location %></td>
+  	<td><%= patient.phone_number %></td>
+  	<td><%= patient.next_of_kin  %></td>
     <td><%=link "view", to: Routes.patient_path(@conn, :show, patient)%></td>
 
     </tr>

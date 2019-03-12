@@ -1,5 +1,4 @@
 <h1>Patient Details</h1>
-
  <%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
   <%= if @changeset.action do %>
   <div class = "alert alert-danger">

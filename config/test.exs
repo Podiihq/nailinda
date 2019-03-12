@@ -16,3 +16,6 @@ config :nailinda, Nailinda.Repo,
   database: "nailinda_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :phoenix_integration,
+  endpoint: NailindaWeb.Endpoint
