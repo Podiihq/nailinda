@@ -44,17 +44,10 @@
   <div id="map" height="460px" width="100%"></div>
     <div id="form">
       <table>
-        <tr>Longitude: <p id="long"></p>
-          </tr>
-          <tr>Latitude: <p id="lat"></p></tr>
-      <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
-                 <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+      <tr><td>Name of location:</td> <td><input type='text' id='position'/> </td> </tr>
+                 <tr><td></td><td><input type='button' value='Save' onclick='getLocation()'/></td></tr>
       </table>
     </div>
-    <div id="message">Location saved</div>
-
-  <div>     
-    <%= submit "Create Patient" %>
-  </div>
+     <%= submit "Create Patient" %>
 <% end %>
 

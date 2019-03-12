@@ -61,9 +61,10 @@
 
           var latlng = marker.getPosition();
           console.log(marker);
-          document.getElementById("lat").innerHTML = latlng.lat();
-          document.getElementById("long").innerHTML = latlng.lng();
-          document.getElementById("location").value = latlng.lat() + " " + latlng.lng();
+         
+         
+          document.getElementById("location").value = latlng.lat() + " " + latlng.lng() ;
+
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
             
@@ -73,9 +74,9 @@
 
 
       function saveData() {
-        var address = escape(document.getElementById('address').value);
+        var location = escape(document.getElementById('position').value);
         var latlng = marker.getPosition();
-        var url = 'location=&address=' + address +
+        var url = 'location=&address=' + location +
                   '&type=' + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
         
         downloadUrl(url, function(data, responseCode) {
@@ -104,6 +105,13 @@
       }
 
       function doNothing () {
+      }
+
+      function getLocation() {
+        value = document.getElementById("location").value;
+        h = document.getElementById("position").value;
+
+        document.getElementById("location").value = value + " " + h;
       }
 
     </script>
