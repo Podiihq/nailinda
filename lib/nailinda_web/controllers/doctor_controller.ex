@@ -19,4 +19,9 @@ defmodule NailindaWeb.DoctorController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    doctor = User.get_doctor_by_id(id)
+    render(conn, "show.html", doctor: doctor)
+  end
 end
