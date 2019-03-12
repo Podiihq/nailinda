@@ -13,7 +13,7 @@
  	</thead>
 
   <tbody>
-  <tr> 
+   <tr> 
     <td><%= @doctor.id %> </td>
     <td><%= @doctor.first_name %> </td>	
     <td><%= @doctor.middle_name %></td>
@@ -23,6 +23,6 @@
     <td><%= @doctor.speciality%></td>
     <td><%= @doctor.email%></td>
     <td><%= @doctor.location %></td>
-  </tr>
+   </tr>
   </tbody>
  </table>
