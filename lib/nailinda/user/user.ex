@@ -54,4 +54,8 @@ defmodule Nailinda.User do
     Doctor
     |> Repo.all()
   end
+
+  def delete_doctor(%Doctor{} = doctor) do
+    Repo.delete(doctor)
+  end
 end
