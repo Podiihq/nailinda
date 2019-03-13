@@ -49,4 +49,9 @@ defmodule Nailinda.User do
     Doctor
     |> Repo.get!(id)
   end
+
+  def get_all_doctors do
+    Doctor
+    |> Repo.all()
+  end
 end
