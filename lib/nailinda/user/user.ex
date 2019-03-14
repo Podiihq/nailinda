@@ -58,4 +58,10 @@ defmodule Nailinda.User do
   def delete_doctor(%Doctor{} = doctor) do
     Repo.delete(doctor)
   end
+
+  def update_doctor(%Doctor{} = doctor, doctor_params) do
+    doctor
+    |> Doctor.changeset(doctor_params)
+    |> Repo.update()
+  end
 end
