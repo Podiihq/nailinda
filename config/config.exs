@@ -17,6 +17,12 @@ config :nailinda, NailindaWeb.Endpoint,
   render_errors: [view: NailindaWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Nailinda.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# Phauxth authentication configuration
+config :phauxth,
+  user_context: Nailinda.Accounts,
+  crypto_module: Argon2,
+  token_module: NailindaWeb.Auth.Token
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
