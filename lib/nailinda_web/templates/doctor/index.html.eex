@@ -1,4 +1,4 @@
-<h1> Doctor  details</h1>
+<h2> Doctor  details</h2>
 <table>
  	<thead>
  		<th>ID</th>
@@ -26,6 +26,7 @@
     <td><%= doctor.email%></td>
     <td><%= doctor.location %></td>
     <td><%=link "view", to: Routes.doctor_path(@conn, :show, doctor)%></td>
+    <td><%=link "Delete", to: Routes.doctor_path(@conn, :delete, doctor.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
    </tr>
    <%end %>
   </tbody>
