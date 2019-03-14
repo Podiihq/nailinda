@@ -40,3 +40,6 @@ npm-debug.log
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.exs
+.circleci/config.yml
+redis-stable.tar.gz
+redis-stable/
