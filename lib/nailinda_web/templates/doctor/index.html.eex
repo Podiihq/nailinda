@@ -1,0 +1,32 @@
+<h1> Doctor  details</h1>
+<table>
+ 	<thead>
+ 		<th>ID</th>
+ 		<th> First Name</th>
+ 		<th> Middle Name</th>
+ 		<th> Surname</th>
+ 		<th> ID Number</th>
+ 		<th> Department</th>
+ 		<th> Speciality</th>
+ 		<th> Email</th>
+ 		<th> Location</th>
+ 	</thead>
+
+  <tbody>
+    <%= for doctor <- @doctors do %>
+
+   <tr> 
+    <td><%= doctor.id %> </td>
+    <td><%= doctor.first_name %> </td>	
+    <td><%= doctor.middle_name %></td>
+    <td><%= doctor.surname %></td>
+    <td><%= doctor.id_number %></td>
+    <td><%= doctor.department%></td>
+    <td><%= doctor.speciality%></td>
+    <td><%= doctor.email%></td>
+    <td><%= doctor.location %></td>
+    <td><%=link "view", to: Routes.doctor_path(@conn, :show, doctor)%></td>
+   </tr>
+   <%end %>
+  </tbody>
+ </table>
