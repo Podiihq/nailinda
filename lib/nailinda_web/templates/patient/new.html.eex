@@ -26,8 +26,8 @@
   </div>
 
   <div>
-    <input id="location" type="text" placeholder="Location">
-    
+    <%= text_input f, :location, placeholder: "Location" , id: "location"%>
+    <%= error_tag f, :location %>
   </div>
 
   <div>

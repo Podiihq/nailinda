@@ -12,6 +12,7 @@ defmodule Nailinda.User.Patient do
     field(:id_number, :integer)
     field(:phone_number, :string)
     field(:next_of_kin, :string)
+    field(:location, :string)
     
 
     timestamps()
@@ -25,14 +26,9 @@ defmodule Nailinda.User.Patient do
       :date_of_birth,
       :id_number,
       :phone_number,
-      :next_of_kin
+      :next_of_kin,
+      :location
     ])
     |> validate_required([:first_name, :last_name, :date_of_birth])
-  end
-
-  def registration_changeset(patient, attrs \\ %{}) do
-    patient
-    |> changeset(attrs)
-    |> cast_assoc(:location, with: &Location.location_changeset/2, required: true)
   end
 end
