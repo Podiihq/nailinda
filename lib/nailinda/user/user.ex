@@ -4,19 +4,14 @@ defmodule Nailinda.User do
   """
   alias Nailinda.Repo
   alias Nailinda.User.Patient
-  alias Nailinda.Redis
+  alias Nailinda.User.Receptionist
+  alias Nailinda.User.Doctor
+
 
   def create_patient(attrs) do
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
-
-    %{"location" => location} = attrs
-    [longitude, latitude, member] = String.split(location)
-    long = String.to_float(longitude)
-    lat = String.to_float(latitude)
-
-    Redis.save_user(long, lat, member)
   end
 
   def update_patient(patient, attrs) do
@@ -37,5 +32,31 @@ defmodule Nailinda.User do
 
   def delete_patient(%Patient{} = patient) do
     Repo.delete(patient)
+  end
+
+  def create_receptionist(attrs) do
+    %Receptionist{}
+    |> Receptionist.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def create_doctor(attrs) do
+    %Doctor{}
+    |> Doctor.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def get_doctor_by_id(id) do
+    Doctor
+    |> Repo.get!(id)
+  end
+
+  def get_all_doctors do
+    Doctor
+    |> Repo.all()
+  end
+
+  def delete_doctor(%Doctor{} = doctor) do
+    Repo.delete(doctor)
   end
 end

@@ -10,16 +10,12 @@ defmodule NailindaWeb.PatientController do
   end
 
   def create(conn, %{"patient" => patient_params}) do
+    IO.inspect patient_params
     case User.create_patient(patient_params) do
       {:ok, %Patient{} = patient} ->
         conn
         |> put_flash(:info, "#{patient.first_name}  created successfuly")
         |> redirect(to: "/patient")
-
-     {:ok, value} ->
-       conn
-       |> put_flash(:info, "saved successfuly to both Redis and Postgres")
-       |> redirect(to: "/patient")
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -36,7 +32,7 @@ defmodule NailindaWeb.PatientController do
     render(conn, "show.html", patient: patient)
   end
 
- def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"id" => id}) do
     patient = User.get_patient_by_id(id)
     changeset = Patient.changeset(patient, %{})
     render(conn, "edit.html", patient: patient, changeset: changeset)
