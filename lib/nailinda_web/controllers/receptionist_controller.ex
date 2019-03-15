@@ -20,4 +20,9 @@ defmodule NailindaWeb.ReceptionistController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def index(conn, _params) do
+    receptionists = User.get_all_receptionist()
+    render(conn, "index.html", receptionists: receptionists)
+  end
 end

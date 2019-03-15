@@ -64,4 +64,9 @@ defmodule Nailinda.User do
     |> Doctor.changeset(doctor_params)
     |> Repo.update()
   end
+
+  def get_all_receptionist do
+    Receptionist
+    |> Repo.all()
+  end
 end
