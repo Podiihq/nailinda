@@ -7,6 +7,7 @@ defmodule Nailinda.User do
   alias Nailinda.User.Receptionist
   alias Nailinda.User.Doctor
 
+
   def create_patient(attrs) do
     %Patient{}
     |> Patient.changeset(attrs)

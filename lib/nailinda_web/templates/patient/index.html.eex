@@ -1,13 +1,13 @@
 <b><h2>Patient details</h2></b> 
  <table>
- 	<thead>
+  <thead>
     <th>ID</th>
- 		<th> First Name</th>
- 		<th> Last name</th>
- 		<th>Date of birth</th>
- 		<th>Id number</th>
- 		<th>Location</th>
- 		<th>Phone number</th>
+    <th> First Name</th>
+    <th> Last name</th>
+    <th>Date of birth</th>
+    <th>Id number</th>
+    <th>Location</th>
+    <th>Phone number</th>
         <th>Next of kin</th>
   </thead>
 
@@ -24,8 +24,8 @@
   	<td><%= patient.next_of_kin  %></td>
     <td><%=link "view", to: Routes.patient_path(@conn, :show, patient)%></td>
 
-  	</tr>
-  	<% end%>
+    </tr>
+    <% end%>
   </tbody>
  </table>
 

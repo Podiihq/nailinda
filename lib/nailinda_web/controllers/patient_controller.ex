@@ -10,6 +10,7 @@ defmodule NailindaWeb.PatientController do
   end
 
   def create(conn, %{"patient" => patient_params}) do
+    IO.inspect patient_params
     case User.create_patient(patient_params) do
       {:ok, %Patient{} = patient} ->
         conn
