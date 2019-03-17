@@ -23,7 +23,7 @@
     <td><%= receptionist.id_number %></td>
     <td><%= receptionist.phone_number%></td>
     <td><%= receptionist.next_of_kin%></td>
-      
+    <td><%=link "view", to: Routes.receptionist_path(@conn, :show, receptionist)%></td> 
      </tr>
    <%end %>
   </tbody>

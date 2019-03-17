@@ -7,7 +7,6 @@ defmodule Nailinda.User do
   alias Nailinda.User.Receptionist
   alias Nailinda.User.Doctor
 
-
   def create_patient(attrs) do
     %Patient{}
     |> Patient.changeset(attrs)
@@ -69,5 +68,10 @@ defmodule Nailinda.User do
   def get_all_receptionist do
     Receptionist
     |> Repo.all()
+  end
+
+  def get_receptionist_by_id(id) do
+    Receptionist
+    |> Repo.get!(id)
   end
 end
