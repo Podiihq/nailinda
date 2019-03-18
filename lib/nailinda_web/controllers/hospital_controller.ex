@@ -53,5 +53,14 @@ defmodule NailindaWeb.HospitalController do
         |> render("edit.html", changeset: changeset,  hospital: hospital)
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    hospital = Facilities.get_hospital_by_id(id)
+    {:ok, _} = Facilities.delete_hospital(hospital)
+
+    conn
+    |> put_flash(:info, " Deleted successfuly")
+    |> redirect(to: "/")
+  end
 end
 

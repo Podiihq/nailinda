@@ -38,4 +38,11 @@ defmodule Nailinda.Facilities do
     	|> Hospital.changeset(attrs)
     	|> Repo.update()
 	end
+
+	@doc """
+	delete a single hospital
+	"""
+	def delete_hospital(%Hospital{} = hospital) do
+		Repo.delete(hospital)
+	end
 end
