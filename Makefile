@@ -48,6 +48,9 @@ lint-format:
 lint-credo:
 	mix credo --strict
 
+.PHONY: lint
+lint: lint-compile lint-format lint-credo
+
 
 .PHONY: test
 test: ## Run the test suite
