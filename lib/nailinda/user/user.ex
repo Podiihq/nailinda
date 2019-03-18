@@ -3,9 +3,7 @@ defmodule Nailinda.User do
    This is the patients context
   """
   alias Nailinda.Repo
-  alias Nailinda.User.Patient
-  alias Nailinda.User.Receptionist
-  alias Nailinda.User.Doctor
+  alias Nailinda.User.{Doctor, Patient, Receptionist}
 
   def create_patient(attrs) do
     %Patient{}
