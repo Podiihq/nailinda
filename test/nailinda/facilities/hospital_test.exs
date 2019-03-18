@@ -1,7 +1,8 @@
 defmodule Nailinda.HospitalTest do
   use Nailinda.DataCase
-  alias Nailinda.Facilities.Hospital
   alias Nailinda.Facilities
+  alias Nailinda.Facilities.Hospital
+  
 
   setup do
     valid_attributes = %{
