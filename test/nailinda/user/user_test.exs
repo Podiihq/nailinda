@@ -3,7 +3,6 @@ defmodule Nailinda.UserTest do
 
   alias Nailinda.User
   alias Nailinda.User.Patient
-  alias Nailinda.User.Receptionist
   alias Nailinda.User.Doctor
 
   describe "users" do
