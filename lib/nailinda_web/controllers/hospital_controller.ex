@@ -4,9 +4,8 @@ defmodule NailindaWeb.HospitalController do
   alias Nailinda.Facilities
   alias Nailinda.Facilities.Hospital
 
-
   def new(conn, _params) do
-  	changeset = Hospital.changeset(%Hospital{}, %{})
+    changeset = Hospital.changeset(%Hospital{}, %{})
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -28,8 +27,8 @@ defmodule NailindaWeb.HospitalController do
   end
 
   def index(conn, _params) do
-    hospitals = Facilities.get_all_hospitals
-    render(conn, "index.html", hospitals: hospitals) 
+    hospitals = Facilities.get_all_hospitals()
+    render(conn, "index.html", hospitals: hospitals)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -39,8 +38,8 @@ defmodule NailindaWeb.HospitalController do
   end
 
   def update(conn, %{"id" => id, "hospital" => attrs}) do
-    
     hospital = Facilities.get_hospital_by_id(id)
+
     case Facilities.update_hospital_details(hospital, attrs) do
       {:ok, %Hospital{}} ->
         conn
@@ -50,7 +49,7 @@ defmodule NailindaWeb.HospitalController do
       {:error, %Ecto.Changeset{} = changeset} ->
         conn
         |> put_flash(:error, "Updating failed")
-        |> render("edit.html", changeset: changeset,  hospital: hospital)
+        |> render("edit.html", changeset: changeset, hospital: hospital)
     end
   end
 
@@ -63,4 +62,3 @@ defmodule NailindaWeb.HospitalController do
     |> redirect(to: "/")
   end
 end
-

@@ -20,13 +20,7 @@ defmodule NailindaWeb.Router do
     resources "/patient", PatientController
     resources "/receptionist", ReceptionistController
     resources "/doctor", DoctorController
-    get "/hospital/new", HospitalController, :new
-    post "/hospital", HospitalController, :create
-    get "/hospital/:id", HospitalController, :show
-    get "/hospitals", HospitalController, :index
-    get "/hospital/:id/edit", HospitalController, :edit
-    put "/hospital/:id", HospitalController, :update
-    delete "/hospital/:id", HospitalController, :delete
+    resources "/hospital", HospitalController
   end
 
   # Other scopes may use custom stacks.

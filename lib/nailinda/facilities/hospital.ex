@@ -29,6 +29,4 @@ defmodule Nailinda.Facilities.Hospital do
       :location
     ])
   end
-
-
 end
