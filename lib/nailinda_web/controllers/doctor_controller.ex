@@ -1,7 +1,7 @@
 defmodule NailindaWeb.DoctorController do
   use NailindaWeb, :controller
-  alias Nailinda.User.Doctor
   alias Nailinda.User
+  alias Nailinda.User.Doctor
 
   def new(conn, _params) do
     changeset = Doctor.changeset(%Doctor{}, %{})
