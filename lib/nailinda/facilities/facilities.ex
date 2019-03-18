@@ -29,4 +29,13 @@ defmodule Nailinda.Facilities do
 		Hospital
 		|> Repo.all
 	end
+
+	@doc """
+	update hospital details
+	"""
+	def update_hospital_details(hospital, attrs) do
+		hospital
+    	|> Hospital.changeset(attrs)
+    	|> Repo.update()
+	end
 end

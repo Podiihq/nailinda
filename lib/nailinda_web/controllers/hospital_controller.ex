@@ -32,5 +32,26 @@ defmodule NailindaWeb.HospitalController do
     render(conn, "index.html", hospitals: hospitals) 
   end
 
+  def edit(conn, %{"id" => id}) do
+    hospital = Facilities.get_hospital_by_id(id)
+    changeset = Hospital.changeset(hospital, %{})
+    render(conn, "edit.html", hospital: hospital, changeset: changeset)
+  end
+
+  def update(conn, %{"id" => id, "hospital" => attrs}) do
+    
+    hospital = Facilities.get_hospital_by_id(id)
+    case Facilities.update_hospital_details(hospital, attrs) do
+      {:ok, %Hospital{}} ->
+        conn
+        |> put_flash(:info, "Successfully updated")
+        |> redirect(to: "/")
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        conn
+        |> put_flash(:error, "Updating failed")
+        |> render("edit.html", changeset: changeset,  hospital: hospital)
+    end
+  end
 end
 

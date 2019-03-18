@@ -10,6 +10,7 @@
     <td><%= @hospital.id %></td>
     <td><%= @hospital.hospital_name %></td>
     <td><%= @hospital.location %></td>
+     <td><%=link "Edit", to: Routes.hospital_path(@conn, :edit, @hospital.id) %></td>
    </tr>
   </tbody>
  </table>
