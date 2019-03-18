@@ -21,4 +21,12 @@ defmodule Nailinda.Facilities do
 		Hospital
 		|> Repo.get(id)
 	end
+
+	@doc """
+	get all hospitals
+	"""
+	def get_all_hospitals do
+		Hospital
+		|> Repo.all
+	end
 end

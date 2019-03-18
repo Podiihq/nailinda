@@ -27,5 +27,10 @@ defmodule NailindaWeb.HospitalController do
     render(conn, "show.html", hospital: hospital)
   end
 
+  def index(conn, _params) do
+    hospitals = Facilities.get_all_hospitals
+    render(conn, "index.html", hospitals: hospitals) 
+  end
+
 end
 
