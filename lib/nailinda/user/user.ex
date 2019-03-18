@@ -56,4 +56,20 @@ defmodule Nailinda.User do
   def delete_doctor(%Doctor{} = doctor) do
     Repo.delete(doctor)
   end
+
+  def update_doctor(%Doctor{} = doctor, doctor_params) do
+    doctor
+    |> Doctor.changeset(doctor_params)
+    |> Repo.update()
+  end
+
+  def get_all_receptionist do
+    Receptionist
+    |> Repo.all()
+  end
+
+  def get_receptionist_by_id(id) do
+    Receptionist
+    |> Repo.get!(id)
+  end
 end
