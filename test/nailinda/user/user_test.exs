@@ -40,16 +40,6 @@ defmodule Nailinda.UserTest do
     test "create user with invalid data to return a error" do
       assert {:error, %Ecto.Changeset{}} = User.create_patient(@invalid_attrs)
     end
-
-    test "creates valid receptionist successfully " do
-      assert {:ok, %Receptionist{} = patient} = User.create_receptionist(@valid_attrs)
-      assert patient.first_name == "jackline"
-      assert patient.phone_number == "079056431"
-    end
-
-    test "fails when creating invalid receptionist" do
-      assert {:error, %Ecto.Changeset{}} = User.create_receptionist(@invalid_attrs)
-    end
   end
 
   describe "doctors" do
