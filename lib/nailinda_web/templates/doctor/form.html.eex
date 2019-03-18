@@ -1,0 +1,44 @@
+<%= form_for @changeset, @action, fn f -> %>
+<%= if @changeset.action do %>
+<div class = "alert alert-danger">
+Creation was not successful please try again
+</div>
+<% end %>
+<div>
+<%= text_input f, :first_name, placeholder: "First Name" %>
+ <%= error_tag f, :first_name %>
+</div>
+<div>
+<%= text_input f, :middle_name, placeholder: "Middle Name" %>
+ <%= error_tag f, :middle_name %>
+</div>
+<div>
+<%= text_input f, :surname, placeholder: "Surname" %>
+ <%= error_tag f, :suname %>
+</div>
+<div>
+<%= text_input f, :id_number, placeholder: "ID Number" %>
+ <%= error_tag f, :id_number %>
+</div>
+<div>
+<%= text_input f, :department, placeholder: "Department" %>
+ <%= error_tag f, :department %>
+</div>
+<div>
+<%= text_input f, :speciality, placeholder: "Speciality" %>
+ <%= error_tag f, :speciality%>
+</div>
+<div>
+<%= text_input f, :email, placeholder: "Email" %>
+ <%= error_tag f, :email %>
+ </div>
+ <div>
+<%= text_input f, :location, placeholder: "Location" %>
+ <%= error_tag f, :location %>
+</div>
+<%= submit "submit" %>
+<% end %>
+
+  		
+  		
+  		

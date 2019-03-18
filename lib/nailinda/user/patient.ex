@@ -13,7 +13,6 @@ defmodule Nailinda.User.Patient do
     field(:phone_number, :string)
     field(:next_of_kin, :string)
     field(:location, :string)
-    
 
     timestamps()
   end
