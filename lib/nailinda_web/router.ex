@@ -22,6 +22,7 @@ defmodule NailindaWeb.Router do
     resources "/doctor", DoctorController
     get "/hospital/new", HospitalController, :new
     post "/hospital", HospitalController, :create
+    get "/hospital/:id", HospitalController, :show
   end
 
   # Other scopes may use custom stacks.

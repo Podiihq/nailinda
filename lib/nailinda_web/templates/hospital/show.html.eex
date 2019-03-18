@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <th>ID</th>
+    <th> Hospital Name</th>
+    <th> Hospital Location</th>
+  </thead>
+
+  <tbody>
+    <tr> 
+    <td><%= @hospital.id %></td>
+    <td><%= @hospital.hospital_name %></td>
+    <td><%= @hospital.location %></td>
+   </tr>
+  </tbody>
+ </table>

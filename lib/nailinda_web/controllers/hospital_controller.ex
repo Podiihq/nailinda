@@ -22,5 +22,10 @@ defmodule NailindaWeb.HospitalController do
     end
   end
 
+  def show(conn, %{"id" => id}) do
+    hospital = Facilities.get_hospital_by_id(id)
+    render(conn, "show.html", hospital: hospital)
+  end
+
 end
 
