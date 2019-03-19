@@ -20,4 +20,14 @@ defmodule NailindaWeb.ReceptionistController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def index(conn, _params) do
+    receptionists = User.get_all_receptionist()
+    render(conn, "index.html", receptionists: receptionists)
+  end
+
+  def show(conn, %{"id" => id}) do
+    receptionist = User.get_receptionist_by_id(id)
+    render(conn, "show.html", receptionist: receptionist)
+  end
 end
