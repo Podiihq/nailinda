@@ -20,6 +20,7 @@ defmodule NailindaWeb.Router do
     resources "/patient", PatientController
     resources "/receptionist", ReceptionistController
     resources "/doctor", DoctorController
+    resources "/hospital", HospitalController
   end
 
   # Other scopes may use custom stacks.
