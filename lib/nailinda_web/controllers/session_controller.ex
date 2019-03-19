@@ -3,9 +3,9 @@ defmodule NailindaWeb.SessionController do
 
   import NailindaWeb.Authorize
 
+  alias Nailinda.Sessions
   alias Phauxth.Login
   alias Phauxth.Remember
-  alias Nailinda.Sessions
 
   plug :guest_check when action in [:new, :create]
 

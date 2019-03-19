@@ -5,8 +5,8 @@ defmodule NailindaWeb.Auth.Token do
 
   @behaviour Phauxth.Token
 
-  alias Phoenix.Token
   alias NailindaWeb.Endpoint
+  alias Phoenix.Token
 
   @token_salt "apObHUXZ"
 

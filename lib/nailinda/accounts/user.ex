@@ -1,4 +1,7 @@
 defmodule Nailinda.Accounts.User do
+  @moduledoc """
+   This is for the users
+  """
   use Ecto.Schema
 
   import Ecto.Changeset
@@ -40,7 +43,8 @@ defmodule Nailinda.Accounts.User do
   end
 
   defp unique_email(changeset) do
-    validate_format(changeset, :email, ~r/@/)
+    changeset
+    |> validate_format(:email, ~r/@/)
     |> validate_length(:email, max: 254)
     |> unique_constraint(:email)
   end

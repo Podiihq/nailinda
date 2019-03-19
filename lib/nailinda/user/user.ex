@@ -1,6 +1,6 @@
 defmodule Nailinda.User do
   @moduledoc """
-   This is the patients context
+   This is for all the users context
   """
   alias Nailinda.Repo
   alias Nailinda.User.{Doctor, Patient, Receptionist}

@@ -1,4 +1,7 @@
 defmodule Nailinda.Sessions.Session do
+  @moduledoc """
+   This module is for user session
+  """
   use Ecto.Schema
 
   import Ecto.Changeset

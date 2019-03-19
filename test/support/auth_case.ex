@@ -1,4 +1,7 @@
 defmodule NailindaWeb.AuthCase do
+  @moduledoc """
+   test for authenticating users
+  """
   use Phoenix.ConnTest
   alias Nailinda.{Accounts, Sessions}
 
