@@ -2,17 +2,17 @@ defmodule Nailinda.Accounts.User do
   use Ecto.Schema
 
   import Ecto.Changeset
-
+  alias Nailinda.Repo
   alias Nailinda.Sessions.Session
 
   @type t :: %__MODULE__{
-    id: integer,
-    email: String.t(),
-    password_hash: String.t(),
-    sessions: %Ecto.Association.NotLoaded{} | [Session.t()],
-    inserted_at: DateTime.t(),
-    updated_at: DateTime.t()
-  }
+          id: integer,
+          email: String.t(),
+          password_hash: String.t(),
+          sessions: %Ecto.Association.NotLoaded{} | [Session.t()],
+          inserted_at: DateTime.t(),
+          updated_at: DateTime.t()
+        }
 
   schema "users" do
     field :email, :string
@@ -65,8 +65,7 @@ defmodule Nailinda.Accounts.User do
   end
 
   # If you are using Bcrypt or Pbkdf2, change Argon2 to Bcrypt or Pbkdf2
-  defp put_pass_hash(%Ecto.Changeset{valid?: true, changes:
-      %{password: password}} = changeset) do
+  defp put_pass_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
     change(changeset, Argon2.add_hash(password))
   end
 

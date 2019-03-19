@@ -25,7 +25,6 @@ defmodule NailindaWeb.UserController do
       {:ok, user} ->
         Log.info(%Log{user: user.id, message: "user created"})
 
-
         conn
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: Routes.session_path(conn, :new))

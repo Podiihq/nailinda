@@ -12,7 +12,7 @@ defmodule Nailinda.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      phauxth: "~> 1.0",
+      phauxth: "~> 1.0"
     ]
   end
 
