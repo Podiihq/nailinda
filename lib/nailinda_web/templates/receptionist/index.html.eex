@@ -1,0 +1,30 @@
+<h2> Receptionist  details</h2>
+<table>
+ 	<thead>
+ 		<th>ID</th>
+ 		<th> First Name</th>
+ 		<th> Last Name</th>
+ 		<th> Date of Birth</th>
+    <th> Location</th>
+ 		<th> ID Number</th>
+ 		<th> Phone Number</th>
+ 		<th> Next of Kin</th>
+	</thead>
+
+  <tbody>
+    <%= for receptionist <- @receptionists do %>
+
+   <tr> 
+    <td><%= receptionist.id %> </td>
+    <td><%= receptionist.first_name %> </td>	
+    <td><%= receptionist.last_name %></td>
+    <td><%= receptionist.date_of_birth %></td>
+    <td><%= receptionist.location %></td>
+    <td><%= receptionist.id_number %></td>
+    <td><%= receptionist.phone_number%></td>
+    <td><%= receptionist.next_of_kin%></td>
+    <td><%=link "view", to: Routes.receptionist_path(@conn, :show, receptionist)%></td> 
+     </tr>
+   <%end %>
+  </tbody>
+ </table>
