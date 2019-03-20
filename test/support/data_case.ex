@@ -12,6 +12,8 @@ defmodule Nailinda.DataCase do
   of the test unless the test case is marked as async.
   """
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   use ExUnit.CaseTemplate
 
   using do
@@ -26,10 +28,10 @@ defmodule Nailinda.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Nailinda.Repo)
+    :ok = Sandbox.checkout(Nailinda.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Nailinda.Repo, {:shared, self()})
+      Sandbox.mode(Nailinda.Repo, {:shared, self()})
     end
 
     :ok

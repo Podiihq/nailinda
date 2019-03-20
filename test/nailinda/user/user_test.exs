@@ -2,8 +2,7 @@ defmodule Nailinda.UserTest do
   use Nailinda.DataCase
 
   alias Nailinda.User
-  alias Nailinda.User.Patient
-  alias Nailinda.User.Doctor
+  alias Nailinda.User.{Doctor, Patient}
 
   describe "users" do
     @valid_attrs %{

@@ -18,9 +18,11 @@ Ops, something went wrong! Please check the errors below.
  <%= error_tag f, :date_of_birth%>
 </div>
 <div>
-<%= text_input f,:location , placeholder: " Location" %>
- <%= error_tag f, :location %>
-</div>
+  <%= inputs_for f, :location, fn lf -> %>
+  <%= text_input lf, :location, placeholder: "Location" %>
+  <%= error_tag lf, :location %>
+  <% end %>
+  </div> 
 <div>
 <%= text_input f, :id_number, placeholder: "Id Number" %>
  <%= error_tag f, :id_number %>

@@ -1,0 +1,35 @@
+<h2> Doctor  details</h2>
+<table>
+ 	<thead>
+ 		<th>ID</th>
+ 		<th> First Name</th>
+ 		<th> Middle Name</th>
+ 		<th> Surname</th>
+ 		<th> ID Number</th>
+ 		<th> Department</th>
+ 		<th> Speciality</th>
+ 		<th> Email</th>
+ 		<th> Location</th>
+ 	</thead>
+
+  <tbody>
+    <%= for doctor <- @doctors do %>
+
+   <tr> 
+    <td><%= doctor.id %> </td>
+    <td><%= doctor.first_name %> </td>	
+    <td><%= doctor.middle_name %></td>
+    <td><%= doctor.surname %></td>
+    <td><%= doctor.id_number %></td>
+    <td><%= doctor.department%></td>
+    <td><%= doctor.speciality%></td>
+    <td><%= doctor.email%></td>
+    <td><%= doctor.location %></td>
+    <td><%=link "Edit", to: Routes.doctor_path(@conn, :edit, doctor.id), class: "btn btn-default"
+      %></td>
+    <td><%=link "view", to: Routes.doctor_path(@conn, :show, doctor), class: "btn btn-default" %></td>
+    <td><%=link "Delete", to: Routes.doctor_path(@conn, :delete, doctor.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
+   </tr>
+   <%end %>
+  </tbody>
+ </table>
