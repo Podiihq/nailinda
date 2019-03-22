@@ -71,5 +71,5 @@ config :nailinda, Nailinda.Repo,
   username: "postgres",
   password: "postgres",
   database: "nailinda_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10

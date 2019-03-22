@@ -1,7 +1,16 @@
 /* This file is for your main application css. */
 
-@import "./phoenix.css";
+@import "bulma";
 
  #map {
         height: 300px;
+
       }
+
+.navbar-start .navbar-item {
+    display: inline-block;
+    float: right;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.
