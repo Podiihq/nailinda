@@ -1,0 +1,29 @@
+<h1> Edit Hospital Details</h1>
+<%= form_for @changeset, Routes.hospital_path(@conn, :update, @hospital), fn f -> %>
+<div>
+<%= text_input f, :hospital_name, placeholder: "Hospital Name" %>
+ <%= error_tag f, :hospital_name %>
+</div>
+<div>
+<%= text_input f, :number_of_beds, placeholder: "Number of Beds" %>
+ <%= error_tag f, :number_of_beds %>
+</div>
+<div>
+<%= text_input f, :classification, placeholder: "Classification" %>
+ <%= error_tag f, :classification %>
+</div>
+<div>
+<%= text_input f, :number_of_doctors, placeholder: "Number of Doctors" %>
+ <%= error_tag f, :number_of_doctors %>
+</div>
+<div>
+<%= text_input f, :location, placeholder: "Location" %>
+ <%= error_tag f, :location %>
+</div>
+
+<%= submit "Edit" %>
+<% end %>
+
+  		
+  		
+  		
