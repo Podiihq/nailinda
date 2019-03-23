@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Nailinda · Phoenix Framework</title>
+    <title>Phauxth authentication with Phoenix</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
@@ -14,7 +14,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <h1>Nailinda</h1>
-    
+
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -31,11 +31,11 @@
       <a class="navbar-item">
         About
       </a>
-       
+
       <a class="navbar-item">
         Contact Us
       </a>
-     
+
       </div>
     </div>
 
@@ -45,13 +45,13 @@
           <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
-        
+
         </div>
       </div>
     </div>
   </div>
 </nav>
-        
+
       </section>
     </header>
     <main role="main" class="container">
@@ -71,7 +71,7 @@
 
 
 
-      function initMap() { 
+      function initMap() {
         var kisumu = {lat: -0.10221, lng: 34.76171};
         map = new google.maps.Map(document.getElementById('map'), {
           center: kisumu,
@@ -95,13 +95,13 @@
 
           var latlng = marker.getPosition();
           console.log(marker);
-         
-         
+
+
           document.getElementById("location").value = latlng.lat() + " " + latlng.lng() ;
 
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
-            
+
           });
         });
       }
@@ -112,7 +112,7 @@
         var latlng = marker.getPosition();
         var url = 'location=&address=' + location +
                   '&type=' + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
-        
+
         downloadUrl(url, function(data, responseCode) {
 
           if (responseCode == 200 && data.length <= 1) {

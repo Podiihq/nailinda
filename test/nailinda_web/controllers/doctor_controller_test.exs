@@ -15,9 +15,7 @@ defmodule NailindaWeb.DoctorControllerTest do
         id_number: 4_576_890
       })
 
-    response =
-      conn
-      |> get(Routes.doctor_path(conn, :show, doctor.id))
+    get(conn, Routes.doctor_path(conn, :show, doctor.id))
 
     expected = %{
       "data" => %{
@@ -29,6 +27,6 @@ defmodule NailindaWeb.DoctorControllerTest do
       }
     }
 
-    assert response = expected
+    assert conn = expected
   end
 end

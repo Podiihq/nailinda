@@ -1,9 +1,9 @@
 defmodule Nailinda.User do
   @moduledoc """
-   This is the patients context
+   This is for all the users context
   """
   alias Nailinda.Repo
-  alias Nailinda.User.{Doctor, Patient, Receptionist}
+  alias Nailinda.User.{Doctor, Patient}
 
   def create_patient(attrs) do
     %Patient{}
@@ -31,12 +31,6 @@ defmodule Nailinda.User do
     Repo.delete(patient)
   end
 
-  def create_receptionist(attrs) do
-    %Receptionist{}
-    |> Receptionist.changeset(attrs)
-    |> Repo.insert()
-  end
-
   def create_doctor(attrs) do
     %Doctor{}
     |> Doctor.changeset(attrs)
@@ -61,15 +55,5 @@ defmodule Nailinda.User do
     doctor
     |> Doctor.changeset(doctor_params)
     |> Repo.update()
-  end
-
-  def get_all_receptionist do
-    Receptionist
-    |> Repo.all()
-  end
-
-  def get_receptionist_by_id(id) do
-    Receptionist
-    |> Repo.get!(id)
   end
 end
