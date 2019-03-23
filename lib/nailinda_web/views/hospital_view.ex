@@ -3,7 +3,7 @@ defmodule NailindaWeb.HospitalView do
 
   alias Nailinda.Facilities.Hospital
 
-  def get_member(%Hospital{location: name} = location) do
+  def get_member(%Hospital{location: name}) do
     name
     |> String.split()
     |> Enum.at(2)
