@@ -10,7 +10,8 @@
     <tr> 
     <td><%= hospital.id %></td>
     <td><%= hospital.hospital_name %></td>
-    <td><%= hospital.location %></td>
+    <td><%= get_member(hospital) %></td>
+     <td><%=link "View", to: Routes.hospital_path(@conn, :show, hospital.id) %></td>
    </tr>
    <% end %>
   </tbody>
