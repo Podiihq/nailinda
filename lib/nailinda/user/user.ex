@@ -6,9 +6,16 @@ defmodule Nailinda.User do
   alias Nailinda.User.Patient
   alias Nailinda.User.Receptionist
   alias Nailinda.User.Doctor
+  alias Nailinda.Redis
 
 
   def create_patient(attrs) do
+    %{"location" => location } = attrs
+
+    [long, lat, member] = String.split(attrs)
+
+    Redis.save_patient_location(long, lat, member)
+    
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
