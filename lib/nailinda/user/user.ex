@@ -1,12 +1,10 @@
 defmodule Nailinda.User do
   @moduledoc """
-   This is the patients context
+   This is for all the users context
   """
   alias Nailinda.Repo
-  alias Nailinda.User.Patient
-  alias Nailinda.User.Receptionist
-  alias Nailinda.User.Doctor
   alias Nailinda.Redis
+  alias Nailinda.User.{Doctor, Patient}
 
 
   def create_patient(attrs) do
@@ -15,7 +13,7 @@ defmodule Nailinda.User do
     [long, lat, member] = String.split(attrs)
 
     Redis.save_patient_location(long, lat, member)
-    
+
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
@@ -41,12 +39,6 @@ defmodule Nailinda.User do
     Repo.delete(patient)
   end
 
-  def create_receptionist(attrs) do
-    %Receptionist{}
-    |> Receptionist.changeset(attrs)
-    |> Repo.insert()
-  end
-
   def create_doctor(attrs) do
     %Doctor{}
     |> Doctor.changeset(attrs)
@@ -65,5 +57,11 @@ defmodule Nailinda.User do
 
   def delete_doctor(%Doctor{} = doctor) do
     Repo.delete(doctor)
+  end
+
+  def update_doctor(%Doctor{} = doctor, doctor_params) do
+    doctor
+    |> Doctor.changeset(doctor_params)
+    |> Repo.update()
   end
 end

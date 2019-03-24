@@ -1,7 +1,7 @@
 defmodule NailindaWeb.DoctorController do
   use NailindaWeb, :controller
-  alias Nailinda.User.Doctor
   alias Nailinda.User
+  alias Nailinda.User.Doctor
 
   def new(conn, _params) do
     changeset = Doctor.changeset(%Doctor{}, %{})
@@ -37,5 +37,27 @@ defmodule NailindaWeb.DoctorController do
     conn
     |> put_flash(:info, "ID #{doctor.id} Deleted successfuly")
     |> redirect(to: "/")
+  end
+
+  def edit(conn, %{"id" => id}) do
+    doctor = User.get_doctor_by_id(id)
+    changeset = Doctor.changeset(doctor, %{})
+    render(conn, "edit.html", doctor: doctor, changeset: changeset)
+  end
+
+  def update(conn, %{"id" => id, "doctor" => doctor_params}) do
+    doctor = User.get_doctor_by_id(id)
+
+    case User.update_doctor(doctor, doctor_params) do
+      {:ok, %Doctor{}} ->
+        conn
+        |> put_flash(:info, "ID #{doctor.id} Successfully update")
+        |> redirect(to: "/")
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        conn
+        |> put_flash(:error, "Updating failed")
+        |> render("edit.html", doctor: doctor, changeset: changeset)
+    end
   end
 end

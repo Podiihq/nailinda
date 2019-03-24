@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <th>ID</th>
+    <th> Hospital Name</th>
+    <th> Hospital Location</th>
+  </thead>
+
+  <tbody>
+    <tr> 
+    <td><%= @hospital.id %></td>
+    <td><%= @hospital.hospital_name %></td>
+    <td><%= get_member(@hospital) %></td>
+     <td><%=link "Edit", to: Routes.hospital_path(@conn, :edit, @hospital.id) %></td>
+     <td><%=link "Delete", to: Routes.hospital_path(@conn, :delete, @hospital.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
+   </tr>
+  </tbody>
+ </table>

@@ -14,6 +14,7 @@ defmodule NailindaWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -26,10 +27,10 @@ defmodule NailindaWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Nailinda.Repo)
+    :ok = Sandbox.checkout(Nailinda.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Nailinda.Repo, {:shared, self()})
+      Sandbox.mode(Nailinda.Repo, {:shared, self()})
     end
 
     :ok

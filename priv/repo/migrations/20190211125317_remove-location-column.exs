@@ -3,7 +3,7 @@ defmodule :"Elixir.Nailinda.Repo.Migrations.Remove-location-column" do
 
   def change do
     alter table(:patients) do
-    	remove :location
+      remove :location
     end
   end
 end
