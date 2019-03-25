@@ -6,9 +6,8 @@ defmodule Nailinda.User do
   alias Nailinda.Redis
   alias Nailinda.User.{Doctor, Patient}
 
-
   def create_patient(attrs) do
-    %{"location" => location } = attrs
+    %{"location" => location} = attrs
 
     loc = String.split(location)
 
