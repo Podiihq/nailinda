@@ -7,6 +7,7 @@ defmodule Nailinda.Repo.Migrations.CreateRoles do
 
       timestamps()
     end
+
     create unique_index(:roles, [:role])
   end
 end

@@ -11,10 +11,11 @@ defmodule NailindaWeb.RoleController do
 
   def create(conn, %{"role" => role_attrs}) do
     case Accounts.create_role(role_attrs) do
-      {:ok, role} -> 
+      {:ok, role} ->
         conn
         |> put_flash(:info, "successfully created role!")
         |> redirect(to: "/")
+
       {:error, %Ecto.Changeset{} = changeset} ->
         conn
         |> render("new.html", changeset: changeset)

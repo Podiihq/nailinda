@@ -68,13 +68,15 @@ defmodule Nailinda.AccountsTest do
   end
 
   describe "roles can be created" do
-
     test "creating a role successfully" do
-      assert {:ok, role = Accounts.create_role(%{role: "gweno"})}
+      assert {:ok, _role = Accounts.create_role(%{role: "gweno"})}
     end
 
-    test "unsuccessful role creation if not unique or blank" do
-      assert {:error, role} = Accounts.create_role(%{role: ""})
+    test "unsuccessful role creation if blank" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_role(%{role: ""})
+    end
+
+    test "unsuccessful role creation if not unique" do
       assert {:error, %Ecto.Changeset{}} = Accounts.create_role(%{role: "patient"})
     end
   end

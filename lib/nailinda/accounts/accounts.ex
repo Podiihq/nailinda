@@ -4,7 +4,7 @@ defmodule Nailinda.Accounts do
   """
 
   import Ecto.Query, warn: false
-  
+
   alias Nailinda.Accounts.{Doctor, Patient, Role}
   alias Nailinda.{Accounts.User, Repo, Sessions, Sessions.Session}
 
@@ -127,7 +127,7 @@ defmodule Nailinda.Accounts do
     |> Repo.update()
   end
 
-  @doc"""
+  @doc """
   creates a role in the database
   """
 

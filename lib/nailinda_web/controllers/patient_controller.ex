@@ -40,7 +40,7 @@ defmodule NailindaWeb.PatientController do
   def update(conn, %{"id" => id, "patient" => attrs}) do
     patient = Accounts.get_patient_by_id(id)
 
-    case User.update_patient(patient, attrs) do
+    case Accounts.update_patient(patient, attrs) do
       {:ok, %Patient{}} ->
         conn
         |> put_flash(:info, "Successfully update")
