@@ -2,8 +2,8 @@ defmodule Nailinda.User do
   @moduledoc """
    This is for all the users context
   """
-  alias Nailinda.Repo
   alias Nailinda.Redis
+  alias Nailinda.Repo
   alias Nailinda.User.{Doctor, Patient}
 
   def create_patient(attrs) do
