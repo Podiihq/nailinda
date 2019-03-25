@@ -10,7 +10,11 @@ defmodule Nailinda.User do
   def create_patient(attrs) do
     %{"location" => location } = attrs
 
-    [long, lat, member] = String.split(attrs)
+    loc = String.split(location)
+
+    [long, lat] = Enum.take(loc, 2)
+    [h, h1 | t] = loc
+    member = Enum.join(t, " ")
 
     Redis.save_patient_location(long, lat, member)
 
