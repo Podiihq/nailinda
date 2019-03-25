@@ -12,7 +12,7 @@ defmodule Nailinda.User do
     loc = String.split(location)
 
     [long, lat] = Enum.take(loc, 2)
-    [h, h1 | t] = loc
+    [_h, _h1 | t] = loc
     member = Enum.join(t, " ")
 
     Redis.save_patient_location(long, lat, member)
