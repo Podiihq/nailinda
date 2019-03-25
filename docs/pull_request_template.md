@@ -30,3 +30,4 @@ We have a handy tool that helps you check if your elixir code is well formatted.
 then it will definitly pass our linting checks online
 
 - [ ] I have filled in all the required information above
+- [ ] I have marked my work as `ready for review`
