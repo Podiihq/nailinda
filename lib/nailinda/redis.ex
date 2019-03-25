@@ -19,7 +19,7 @@ defmodule Nailinda.Redis do
   end
 
   def save_patient_location(long, lat, member) do
-    start_redis
+    start_redis()
     |> Redix.command(["GEOADD", "patient_location", long, lat, member])
   end
 end
