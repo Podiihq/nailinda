@@ -1,7 +1,7 @@
 defmodule Nailinda.Redis do
   use GenServer
 
-  def start_link(opts // []) do
+  def start_link(opts) do
     GenServer.start_link(__MODULE__, :ok, opts)
   end
 
@@ -10,13 +10,13 @@ defmodule Nailinda.Redis do
     {:ok, %{}}
   end
 
-  defp start_redis() do
+  def start_redis() do
     {:ok, conn} = Redix.start_link("redis://redis:6379", port: 6379)
       conn
   end
 
   def save_patient_location(long, lat, member) do
     start_redis()
-    |> Redix.command("GEOADD","patient_location", long, lat, member)
+    |> Redix.command(["GEOADD","patient_location", long, lat, member])
   end
 end
