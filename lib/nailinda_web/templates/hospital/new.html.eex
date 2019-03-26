@@ -1,5 +1,5 @@
 <h1 class="title"> Create Hospital</h1>
-<%= form_for @changeset, Routes.hospital_path(@conn, :create), fn f -> %>
+<%= form_for @changeset, Routes.hospital_path(@conn, :create), fn _f-> %>
 
 
     <div class="columns is-mobile is-centered">
