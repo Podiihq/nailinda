@@ -141,5 +141,4 @@ defmodule Nailinda.Accounts do
     {:ok, loc} = Redis.show_all_patients()
     loc
   end
-  
 end
