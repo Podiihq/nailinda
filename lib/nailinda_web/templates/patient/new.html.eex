@@ -1,82 +1,83 @@
 <h1 class="title">Patient Details</h1>
- <%= form_for @changeset, Routes.patient_path(@conn, :create), fn _f -> %>
+ <%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
   <%= if @changeset.action do %>
   <div class = "alert alert-danger">
   Oops, something went wrong! Please check the errors below.
   </div>
   <% end %>
-  <div class="columns is-mobile is-centered">
+  <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
      <div class="column is-half">
     <div class="field ">
      <label class="label">First Name</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter first name">
+        <%= text_input f, :first_name, placeholder: "First Name", class: "input is-info"%>
+        <%= error_tag f, :first_name %>
      </div>
-      </div>
       </div>
     </div>
 
-    <div class="columns is-mobile is-centered">
      <div class="column is-half">
       <div class="field">
      <label class="label">Last Name</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter last name">
+        <%= text_input f, :last_name, placeholder: "Last Name", class: "input is-info"%>
+        <%= error_tag f, :last_name %>
       </div>
       </div>
       </div>
     </div>
 
-  <div class="columns is-mobile is-centered">
+  <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
      <div class="column is-half">
     <div class="field ">
      <label class="label">Date of Birth</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter date of birth">
+        <%= date_select f, :date_of_birth, placeholder: "Date Of Birth", class: "input is-info" %>
+        <%= error_tag f, :date_of_birth%>
      </div>
       </div>
       </div>
-    </div>
-  
-  <div class="columns is-mobile is-centered">
+
      <div class="column is-half">
     <div class="field ">
      <label class="label">ID Number</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter ID number">
+        <%= text_input f, :id_number, placeholder: "Id Number", class: "input is-info" %>
+        <%= error_tag f, :id_number %>
      </div>
       </div>
       </div>
     </div>
 
-    <div class="columns is-mobile is-centered">
+    <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
      <div class="column is-half">
       <div class="field">
      <label class="label">Location</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter location">
+        <%= text_input f, :location, placeholder: "Location" , id: "location", class: "input is-info"%>
+        <%= error_tag f, :location %>
       </div>
       </div>
       </div>
-    </div>
 
-  <div class="columns is-mobile is-centered">
      <div class="column is-half">
-    <div class="field ">
-     <label class="label">Phone Number</label>
-      <div class="control">
-    <input class="input is-info " type="text" placeholder="Digits">
-     </div>
-      </div>
+        <div class="field ">
+         <label class="label">Phone Number</label>
+        <div class="control">
+          <%= text_input f, :phone_number, placeholder: "Phone Number", class: "input is-info"%>
+          <%= error_tag f, :phone_number %>
+       </div>
       </div>
     </div>
+    </div>
 
-    <div class="columns is-mobile is-centered">
+    <div class="columns is-two-thirds-tablet is-three-quarters-mobile ">
      <div class="column is-half">
       <div class="field">
      <label class="label">Next of Kin</label>
       <div class="control">
-    <input class="input is-info" type="text" placeholder="Enter next of kin">
+        <%= text_input f, :next_of_kin, placeholder: "Next of Kin", class: "input is-info"%>
+        <%= error_tag f, :next_of_kin %>
       </div>
       </div>
       </div>
@@ -88,7 +89,7 @@
       <tr>
         <td>
            <label class="label">Name of Location:</label>
-        </td> 
+        </td>
         <td>
           <div class="field has-addons">
               <div class="control">
@@ -104,8 +105,7 @@
     </div>
 <div class="field">
   <div class="control">
-    <button class="button is-link is-rounded ">Create patient</button>
+     <%= submit "Create Patient", class: "button is-link is-rounded" %>
   </div>
 </div>
 <% end %>
-
