@@ -25,8 +25,7 @@ defmodule Nailinda.HospitalTest do
 
   describe "Hospital" do
     test "hospital is created successfully", %{valid_attributes: valid_attributes} do
-      {:ok, %Nailinda.Facilities.Hospital{hospital_name: name}} =
-        Facilities.create_hospital(valid_attributes)
+      {:ok, %Hospital{hospital_name: name}} = Facilities.create_hospital(valid_attributes)
 
       assert name == "MyHospital"
     end

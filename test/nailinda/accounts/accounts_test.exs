@@ -4,6 +4,11 @@ defmodule Nailinda.AccountsTest do
   alias Nailinda.Accounts
   alias Nailinda.Accounts.User
 
+  setup do
+    Accounts.create_role(%{role: "patient"})
+    :ok
+  end
+
   @create_attrs %{email: "fred@example.com", password: "reallyHard2gue$$"}
   @update_attrs %{email: "frederick@example.com"}
   @invalid_attrs %{email: "", password: ""}
@@ -59,6 +64,20 @@ defmodule Nailinda.AccountsTest do
       user = fixture(:user)
       assert {:ok, %User{}} = Accounts.delete_user(user)
       refute Accounts.get_user(user.id)
+    end
+  end
+
+  describe "roles can be created" do
+    test "creating a role successfully" do
+      assert {:ok, _role = Accounts.create_role(%{role: "gweno"})}
+    end
+
+    test "unsuccessful role creation if blank" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_role(%{role: ""})
+    end
+
+    test "unsuccessful role creation if not unique" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_role(%{role: "patient"})
     end
   end
 end
