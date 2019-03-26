@@ -22,4 +22,9 @@ defmodule Nailinda.Redis do
     start_redis()
     |> Redix.command(["GEOADD", "patient_location", long, lat, member])
   end
+
+  def show_all_patients do
+    start_redis()
+    |> Redix.command(["ZRANGE", "patient_location", 0, -1])
+  end
 end

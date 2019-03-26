@@ -1,0 +1,4 @@
+<h1> Patient Locations </h1>
+<%= for location <- @locations do %>
+<%= location %>
+<% end %>
