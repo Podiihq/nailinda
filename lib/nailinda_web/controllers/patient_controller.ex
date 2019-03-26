@@ -63,7 +63,7 @@ defmodule NailindaWeb.PatientController do
   end
 
   def locations(conn, _params) do
-    locations = User.get_patient_locations()
+    locations = Accounts.get_patient_locations()
     render(conn, "locations.html", locations: locations)
   end
 end

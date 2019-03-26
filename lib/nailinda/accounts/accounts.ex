@@ -5,8 +5,8 @@ defmodule Nailinda.Accounts do
 
   import Ecto.Query, warn: false
 
-  alias Nailinda.Accounts.{Doctor, Patient, Role}
-  alias Nailinda.{Accounts.User, Repo, Sessions, Sessions.Session}
+  alias Nailinda.Accounts.{Doctor, Patient, Role, User}
+  alias Nailinda.{Redis, Repo, Sessions, Sessions.Session}
 
   @type changeset_error :: {:error, Ecto.Changeset.t()}
 
@@ -135,5 +135,10 @@ defmodule Nailinda.Accounts do
     %Role{}
     |> Role.changeset(params)
     |> Repo.insert()
+  end
+
+  def get_patient_locations do
+    {:ok, loc} = Redis.show_all_patients()
+    loc
   end
 end
