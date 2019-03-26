@@ -18,6 +18,11 @@ defmodule Nailinda.User do
     |> Repo.insert()
   end
 
+  def get_patient_locations do
+    {:ok, loc} = Redis.show_all_patients()
+    loc
+  end
+
   def update_patient(patient, attrs) do
     patient
     |> Patient.changeset(attrs)
