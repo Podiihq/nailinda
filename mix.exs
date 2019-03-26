@@ -48,7 +48,8 @@ defmodule Nailinda.MixProject do
       {:argon2_elixir, "~> 2.0"},
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_integration, "~> 0.6", only: :test},
-      {:credo, "~> 1.0"}
+      {:credo, "~> 1.0"},
+      {:redix, ">= 0.0.0"}
     ]
   end
 

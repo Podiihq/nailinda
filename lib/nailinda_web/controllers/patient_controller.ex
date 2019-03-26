@@ -61,4 +61,9 @@ defmodule NailindaWeb.PatientController do
     |> put_flash(:info, " Deleted successfuly")
     |> redirect(to: "/")
   end
+
+  def locations(conn, _params) do
+    locations = User.get_patient_locations()
+    render(conn, "locations.html", locations: locations)
+  end
 end
