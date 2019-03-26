@@ -9,7 +9,7 @@ defmodule NailindaWeb.HospitalView do
       |> String.split()
       |> Enum.split(2)
 
-    {location_coordinates, location_name} = hospital_name
+    {_location_coordinates, location_name} = hospital_name
 
     location_name
     |> Enum.join(" ")
