@@ -2,10 +2,17 @@ defmodule Nailinda.User do
   @moduledoc """
    This is for all the users context
   """
+  alias Nailinda.Redis
   alias Nailinda.Repo
   alias Nailinda.User.{Doctor, Patient}
 
-  def create_patient(attrs) do
+  def create_patient(%{"location" => location} = attrs) do
+    [long, lat | tail] = String.split(location)
+
+    member = Enum.join(tail, " ")
+
+    Redis.save_patient_location(long, lat, member)
+
     %Patient{}
     |> Patient.changeset(attrs)
     |> Repo.insert()
