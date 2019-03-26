@@ -16,6 +16,7 @@ defmodule NailindaWeb.Router do
 
     get "/", PageController, :index
     resources "/patient", PatientController
+    get "/patient-locations", PatientController, :locations
     resources "/doctor", DoctorController
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete]

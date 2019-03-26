@@ -1,4 +1,4 @@
-<b><h2>Patient details</h2></b> 
+<b><h2>Patient details</h2></b>
  <table>
   <thead>
     <th>ID</th>
@@ -19,7 +19,7 @@
   	<td><%= patient.last_name  %></td>
   	<td><%= patient.date_of_birth %></td>
   	<td><%= patient.id_number %></td>
-  	<td><%= patient.location %></td>
+  	<td><%= get_member(patient) %></td>
   	<td><%= patient.phone_number %></td>
   	<td><%= patient.next_of_kin  %></td>
     <td><%=link "view", to: Routes.patient_path(@conn, :show, patient)%></td>
@@ -28,5 +28,3 @@
     <% end%>
   </tbody>
  </table>
-
- 
