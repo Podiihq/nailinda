@@ -1,8 +1,8 @@
 defmodule Nailinda.UserTest do
   use Nailinda.DataCase
 
-  alias Nailinda.User
-  alias Nailinda.User.{Doctor, Patient}
+  alias Nailinda.Accounts
+  alias Nailinda.Accounts.{Doctor, Patient}
 
   describe "users" do
     @valid_attrs %{
@@ -25,7 +25,7 @@ defmodule Nailinda.UserTest do
     }
 
     test "creates patient with valid data " do
-      assert {:ok, %Patient{} = patient} = User.create_patient(@valid_attrs)
+      assert {:ok, %Patient{} = patient} = Accounts.create_patient(@valid_attrs)
       assert patient.first_name == "jackline"
       assert patient.last_name == "kaunda"
       assert patient.date_of_birth == ~D[2019-01-28]
@@ -36,7 +36,7 @@ defmodule Nailinda.UserTest do
     end
 
     test "create user with invalid data to return a error" do
-      assert {:error, %Ecto.Changeset{}} = User.create_patient(@invalid_attrs)
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_patient(@invalid_attrs)
     end
   end
 
@@ -61,7 +61,7 @@ defmodule Nailinda.UserTest do
     }
 
     test "creates doctor with valid data " do
-      assert {:ok, %Doctor{} = doctor} = User.create_doctor(@valid_attrs)
+      assert {:ok, %Doctor{} = doctor} = Accounts.create_doctor(@valid_attrs)
       assert doctor.first_name == "okoth"
       assert doctor.surname == "kaunda"
       assert doctor.location == "Kisumu"
@@ -69,7 +69,7 @@ defmodule Nailinda.UserTest do
     end
 
     test "create doctor with invalid data to return a error" do
-      assert {:error, %Ecto.Changeset{}} = User.create_doctor(@invalid_attrs)
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_doctor(@invalid_attrs)
     end
   end
 end

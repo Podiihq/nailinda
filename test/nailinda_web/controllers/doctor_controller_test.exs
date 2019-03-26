@@ -1,10 +1,10 @@
 defmodule NailindaWeb.DoctorControllerTest do
   use NailindaWeb.ConnCase
-  alias Nailinda.User
+  alias Nailinda.Accounts
 
   test "show a doctors details if found", %{conn: conn} do
     {:ok, doctor} =
-      User.create_doctor(%{
+      Accounts.create_doctor(%{
         first_name: "okoth",
         middle_name: "kongo",
         surname: "kaunda",
