@@ -6,14 +6,10 @@ defmodule Nailinda.User do
   alias Nailinda.Repo
   alias Nailinda.User.{Doctor, Patient}
 
-  def create_patient(attrs) do
-    %{"location" => location} = attrs
+  def create_patient(%{"location" => location} = attrs) do
+    [long, lat | tail] = String.split(location)
 
-    loc = String.split(location)
-
-    [long, lat] = Enum.take(loc, 2)
-    [_h, _h1 | t] = loc
-    member = Enum.join(t, " ")
+    member = Enum.join(tail, " ")
 
     Redis.save_patient_location(long, lat, member)
 
