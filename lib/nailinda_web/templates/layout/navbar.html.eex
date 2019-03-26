@@ -1,0 +1,37 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item"  href="/">
+      <strong>NAILINDA</strong>
+    </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item"> Home </a>
+      <a class="navbar-item"> About </a>
+      <a class="navbar-item"> Contact Us </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link"> Register </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="<%= Routes.patient_path(@conn, :new) %>"> Patient </a>
+          <a class="navbar-item" href="<%= Routes.hospital_path(@conn, :new) %>"> Hospital </a>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="<%= Routes.session_path(@conn, :new) %>">
+            <strong>Sign in</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
