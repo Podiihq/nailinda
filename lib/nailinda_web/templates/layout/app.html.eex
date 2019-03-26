@@ -4,53 +4,12 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Phauxth authentication with Phoenix</title>
+    <title>Nailinda </title>
       <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item"  href="#">
-        <strong>NAILINDA</strong>
-      </a>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item">
-          Home
-        </a>
-
-        <a class="navbar-item">
-          About
-        </a>
-
-        <a class="navbar-item">
-          Contact Us
-        </a>
-
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
+    <%= render "navbar.html", conn: @conn %>
 
     <main role="main" class="container" >
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
