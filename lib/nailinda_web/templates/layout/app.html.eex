@@ -16,7 +16,6 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
-    <%= render "footer.html", conn: @conn %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBRhK1XHIVibgk2xsf9CjAbEeJaWp8wkg&callback=initMap">
