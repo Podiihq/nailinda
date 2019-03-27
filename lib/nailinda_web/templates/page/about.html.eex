@@ -5,15 +5,19 @@
         <h1 class="title has-text-white is-size-1">
           About Us
         </h1>
-        <h2 class="subtitle has-text-white">A location-based health information system</h2>
+        <h2 class="title is-2 has-text-white">Vision</h2>
         <div class="content">
-          <p> We have a vision to solve the following problems, among many others </p>
-          <ol>
-            <li> Analysing disease trends according to the geographical location. </li>
-            <li> Helping solve challenges faced by pregnant women who are unable to get medical services. </li>
-            <li> Helping users in need medical services to trace nearby health amenities in relation to their location. </li>
-          </ol>
-        </div>
+
+          <p>We aspire to offer easy location of both patients and hospitals,<br>
+             to provide quick medical services and to keep succuint medical<br>records on a continuos basis.</p>
+
+          </div>
+          <h2 class="title is-2 has-text-white">Our Services</h2>
+          <div class="content">
+            <h3 class="subtitle is-4 has-text-white">Emergency Services</h3>
+            <p></p>
+
+            </div>
       </div>
     </div>
   </section>
