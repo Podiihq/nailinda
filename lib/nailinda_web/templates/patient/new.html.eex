@@ -1,52 +1,105 @@
-<h1>Patient Details</h1>
- <%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-  <div class = "alert alert-danger">
-  Oops, something went wrong! Please check the errors below.
-  </div>
-  <% end %>
-  <div>
-  <%= text_input f, :first_name, placeholder: "First Name" %>
-   <%= error_tag f, :first_name %>
-  </div>
+<div class="container">
+  <h1 class="title has-text-centered">Patient Details</h1>
+  <%= form_for @changeset, Routes.patient_path(@conn, :create), fn f -> %>
+    <%= if @changeset.action do %>
+      <div class = "alert alert-danger">
+        Oops, something went wrong! Please check the errors below.
+      </div>
+    <% end %>
+    <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+      <div class="column is-half">
+        <div class="field ">
+          <label class="label">First Name</label>
+          <div class="control">
+            <%= text_input f, :first_name, placeholder: "First Name", class: "input"%>
+            <%= error_tag f, :first_name %>
+          </div>
+        </div>
+      </div>
 
-  <div>
-  <%= text_input f, :last_name, placeholder: "Last Name" %>
-   <%= error_tag f, :last_name %>
-  </div>
-
-  <div>
-  <%= date_select f, :date_of_birth, placeholder: "Date Of Birth" %>
-   <%= error_tag f, :date_of_birth%>
-  </div>
-  
-  <div>
-  <%= text_input f, :id_number, placeholder: "Id Number" %>
-   <%= error_tag f, :id_number %>
-  </div>
-
-  <div>
-    <%= text_input f, :location, placeholder: "Location" , id: "location"%>
-    <%= error_tag f, :location %>
-  </div>
-
-  <div>
-  <%= text_input f, :phone_number, placeholder: "Phone Number" %>
-   <%= error_tag f, :phone_number %>
-  </div>
-
-  <div>
-  <%= text_input f, :next_of_kin, placeholder: "Next of Kin" %>
-   <%= error_tag f, :next_of_kin %>
-  </div>
-
-  <div id="map" height="460px" width="100%"></div>
-    <div id="form">
-      <table>
-      <tr><td>Name of location:</td> <td><input type='text' id='position'/> </td> </tr>
-                 <tr><td></td><td><input type='button' value='Save' onclick='getLocation()'/></td></tr>
-      </table>
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <%= text_input f, :last_name, placeholder: "Last Name", class: "input"%>
+            <%= error_tag f, :last_name %>
+          </div>
+        </div>
+      </div>
     </div>
-     <%= submit "Create Patient" %>
-<% end %>
 
+    <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+      <div class="column is-half">
+        <div class="field ">
+          <label class="label">Date of Birth</label>
+          <div class="control">
+            <%= date_select f, :date_of_birth, placeholder: "Date Of Birth", class: "input" %>
+            <%= error_tag f, :date_of_birth%>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="field ">
+          <label class="label">ID Number</label>
+          <div class="control">
+            <%= text_input f, :id_number, placeholder: "Id Number", class: "input" %>
+            <%= error_tag f, :id_number %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">Location</label>
+          <div class="control">
+            <%= text_input f, :location, placeholder: "Location" , id: "location", class: "input"%>
+            <%= error_tag f, :location %>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="field ">
+          <label class="label">Phone Number</label>
+          <div class="control">
+            <%= text_input f, :phone_number, placeholder: "Phone Number", class: "input"%>
+            <%= error_tag f, :phone_number %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-two-thirds-tablet is-three-quarters-mobile ">
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">Name of next of Kin</label>
+          <div class="control">
+            <%= text_input f, :next_of_kin, placeholder: "Next of Kin", class: "input"%>
+            <%= error_tag f, :next_of_kin %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="map" height="460px" width="100%"></div>
+
+    <label class="label">Name of Location:</label>
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" id="position">
+      </div>
+      <div class="control">
+        <a class="button is-info" onclick='getLocation()'>Save</a>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <%= submit "Create Patient", class: "button is-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
