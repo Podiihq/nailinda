@@ -9,9 +9,9 @@ before_script:
   - mix local.rebar --force
   - mix local.hex --force
   - mix deps.get
+  - mix deps.compile
   - mix ecto.create
   - mix ecto.migrate
 script:
-  - mix test
-script:
+  - make test
   - make lint
