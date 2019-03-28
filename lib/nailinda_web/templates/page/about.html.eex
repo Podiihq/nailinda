@@ -15,9 +15,18 @@
           <h2 class="title is-2 has-text-white">Our Services</h2>
           <div class="content">
             <h3 class="subtitle is-4 has-text-white">Emergency Services</h3>
-            <p></p>
+
+            <p>We provide quick dial-up help lines to ensure that life threatening cases,
+               <br>both emergency and non-emergency, receive the quickest response.</p>
 
             </div>
+            <div class="content">
+              <h3 class="subtitle is-4 has-text-white">Patient Location Data</h3>
+
+              <p>For potential utilization of clinical services by storing <br>
+                patient geographical inormation system data to plan telemedicine service location.</p>
+
+              </div>
       </div>
     </div>
   </section>
