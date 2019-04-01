@@ -1,0 +1,23 @@
+<h1>Show Admin</h1>
+
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @admin.username %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @admin.email %>
+  </li>
+
+  <li>
+    <strong>Phone number:</strong>
+    <%= @admin.phone_number %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.admin_path(@conn, :edit, @admin) %></span>
+<span><%= link "Back", to: Routes.admin_path(@conn, :index) %></span>

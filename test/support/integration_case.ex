@@ -4,7 +4,8 @@ defmodule Nailinda.IntegrationCase do
 
   using do
     quote do
-      use Nailinda.ConnCase
+      alias NailindaWeb.Router.Helpers, as: Routes
+      use NailindaWeb.ConnCase
       use PhoenixIntegration
     end
   end
