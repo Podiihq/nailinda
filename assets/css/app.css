@@ -1,10 +1,9 @@
 /* This file is for your main application css. */
 
-@import "customise_bulma";
 @import "bulma";
-@import "page/index";
 
  #map {
         height: 300px;
 
       }
+

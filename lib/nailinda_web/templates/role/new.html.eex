@@ -1,0 +1,11 @@
+<%= if @changeset.action do %>
+  <div class = "alert alert-danger">
+  Oops, something went wrong! Please check the errors below.
+  </div>
+  <% end %>
+<%= form_for @changeset, Routes.role_path(@conn, :create), fn f -> %>
+  <%= label f, :role%>
+  <%= text_input f, :role%>
+  <%= error_tag f, :role%>
+  <%= submit "Create Role"%>
+<%end%>

@@ -1,36 +1,80 @@
-<h1>Create Hospital</h1>
-<%= form_for @changeset, Routes.hospital_path(@conn, :create), fn f -> %>
+<div class="container">
+  <h1 class="title has-text-centered"> Create Hospital</h1>
+  <%= form_for @changeset, Routes.hospital_path(@conn, :create), fn f-> %>
 
-<div>
-<%= text_input f, :hospital_name, placeholder: "Hospital Name" %>
- <%= error_tag f, :hospital_name %>
-</div>
-<div>
-<%= text_input f, :number_of_beds, placeholder: "Number of Beds" %>
- <%= error_tag f, :number_of_beds %>
-</div>
-<div>
-<%= text_input f, :classification, placeholder: "Classification" %>
- <%= error_tag f, :classification %>
-</div>
-<div>
-<%= text_input f, :number_of_doctors, placeholder: "Number of Doctors" %>
- <%= error_tag f, :number_of_doctors %>
-</div>
-<div>
-<%= text_input f, :location, placeholder: "Location", id: "location" %>
- <%= error_tag f, :location %>
-</div>
-<div id="map" height="460px" width="100%"></div>
-    <div id="form">
-      <table>
-      <tr><td>Name of location:</td> <td><input type='text' id='position'/> </td> </tr>
-                 <tr><td></td><td><input type='button' value='Save' onclick='getLocation()'/></td></tr>
-      </table>
+
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="field ">
+        <label class="label">Hospital Name</label>
+        <div class="control">
+          <%= text_input f, :hospital_name, placeholder: "Hospital Name", class: "input " %>
+          <%= error_tag f, :hospital_name %>
+        </div>
+      </div>
     </div>
-<%= submit "Save" %>
+
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Number of Beds</label>
+        <div class="control">
+          <%= text_input f, :number_of_beds, placeholder: "Number of Beds", class: "input " %>
+          <%= error_tag f, :number_of_beds %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Classification</label>
+        <div class="control">
+          <%= text_input f, :classification, placeholder: "Classification",class: "input " %>
+          <%= error_tag f, :classification %>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Number of Doctors</label>
+        <div class="control">
+          <%= text_input f, :number_of_doctors, placeholder: "Number of Doctors", class: "input " %>
+          <%= error_tag f, :number_of_doctors %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns iis-two-thirds-tablet is-three-quarters-mobile">
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Location</label>
+        <div class="control">
+          <%= text_input f, :location, placeholder: "Location", id: "location", class: "input "%>
+          <%= error_tag f, :location %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="map" height="460px" width="100%"></div>
+  <label class="label">Name of Location:</label>
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" id="position">
+    </div>
+    <div class="control">
+      <a class="button is-info" onclick='getLocation()'>Save</a>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= submit "Submit", class: "button is-primary" %>
+    </div>
+  </div>
 <% end %>
 
-  		
-  		
-  		
+</div>

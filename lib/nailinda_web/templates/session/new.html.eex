@@ -27,7 +27,7 @@
             </div>
 
             <div class="field">
-              <%= submit "Login", class: "button is-info is-fullwidth" %>
+              <%= submit "Login", class: "button is-primary is-fullwidth" %>
             </div>
             <div class="field">
               <%= link "Back", to: Routes.page_path(@conn, :index), class: "button is-fullwidth" %>

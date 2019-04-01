@@ -21,5 +21,7 @@ defmodule NailindaWeb.Router do
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/hospital", HospitalController
+    resources "/roles", RoleController
+    resources "/admins", AdminController
   end
 end

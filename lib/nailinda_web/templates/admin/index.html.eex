@@ -1,0 +1,30 @@
+<h1>Listing Admins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone number</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for admin <- @admins do %>
+    <tr>
+      <td><%= admin.username %></td>
+      <td><%= admin.email %></td>
+      <td><%= admin.phone_number %></td>
+
+      <td>
+        <%= link "Show", to: Routes.admin_path(@conn, :show, admin) %>
+        <%= link "Edit", to: Routes.admin_path(@conn, :edit, admin) %>
+        <%= link "Delete", to: Routes.admin_path(@conn, :delete, admin), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Admin", to: Routes.admin_path(@conn, :new) %></span>

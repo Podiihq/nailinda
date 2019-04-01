@@ -1,4 +1,4 @@
-defmodule Nailinda.User.Patient do
+defmodule Nailinda.Accounts.Patient do
   @moduledoc """
   patients module
   """

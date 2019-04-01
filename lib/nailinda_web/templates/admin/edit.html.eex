@@ -1,0 +1,2 @@
+<h1 class="title has-text-centered">Edit <%= @admin.username %> - Admin</h1>
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_path(@conn, :update, @admin)) %>
