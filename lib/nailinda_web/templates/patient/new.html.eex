@@ -82,6 +82,16 @@
           </div>
         </div>
       </div>
+
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">User Role</label>
+          <div class="control">
+            <%= select f, :role_id, roles(), class: "input" %>
+            <%= error_tag f, :role_id %>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="map" height="460px" width="100%"></div>

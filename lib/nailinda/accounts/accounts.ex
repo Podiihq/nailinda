@@ -132,6 +132,9 @@ defmodule Nailinda.Accounts do
   """
 
   def create_role(params) do
+     %{role: role} = params
+     params = %{role: String.downcase(role)}
+     
     %Role{}
     |> Role.changeset(params)
     |> Repo.insert()

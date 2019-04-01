@@ -13,6 +13,7 @@ defmodule Nailinda.Accounts.Patient do
     field(:phone_number, :string)
     field(:next_of_kin, :string)
     field(:location, :string)
+    belongs_to :role, Role
 
     timestamps()
   end
@@ -26,8 +27,10 @@ defmodule Nailinda.Accounts.Patient do
       :id_number,
       :phone_number,
       :next_of_kin,
-      :location
+      :location,
+      :role_id
     ])
-    |> validate_required([:first_name, :last_name, :date_of_birth])
+    |> validate_required([:first_name, :last_name, :date_of_birth, :role_id])
+    |> unique_constraint(:id_number)
   end
 end

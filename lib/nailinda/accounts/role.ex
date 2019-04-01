@@ -4,9 +4,13 @@ defmodule Nailinda.Accounts.Role do
   """
   import Ecto.Changeset
   use Ecto.Schema
+  alias Nailinda.Accounts.Doctor
+  alias Nailinda.Accounts.Patient
 
   schema "roles" do
     field(:role, :string)
+    has_many :doctors, Doctor
+    has_many :patients, Patient
 
     timestamps()
   end

@@ -14,6 +14,7 @@ defmodule Nailinda.Accounts.Doctor do
     field(:speciality, :string)
     field(:email, :string)
     field(:location, :string)
+    belongs_to :role, Role
 
     timestamps()
   end
@@ -28,7 +29,8 @@ defmodule Nailinda.Accounts.Doctor do
       :department,
       :speciality,
       :email,
-      :location
+      :location,
+      :role_id
     ])
     |> validate_required([
       :first_name,
@@ -38,7 +40,9 @@ defmodule Nailinda.Accounts.Doctor do
       :department,
       :speciality,
       :email,
-      :location
+      :location,
+      :role_id
     ])
+    |> foreign_key_constraint(:role_id)
   end
 end

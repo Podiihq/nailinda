@@ -4,39 +4,109 @@
 Creation was not successful please try again
 </div>
 <% end %>
-<div>
-<%= text_input f, :first_name, placeholder: "First Name" %>
- <%= error_tag f, :first_name %>
+
+<div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+  <div class="column is-quater">
+    <div class="field ">
+      <label class="label">First Name</label>
+      <div class="control">
+        <%= text_input f, :first_name, placeholder: "First Name", class: "input" %>
+        <%= error_tag f, :first_name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-quater">
+    <div class="field">
+      <label class="label">Middle Name</label>
+      <div class="control">
+        <%= text_input f, :middle_name, placeholder: "Middle Name", class: "input" %>
+        <%= error_tag f, :middle_name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-quater">
+    <div class="field">
+      <label class="label">Surname</label>
+      <div class="control">
+        <%= text_input f, :surname, placeholder: "Surname", class: "input" %>
+        <%= error_tag f, :suname %>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-<%= text_input f, :middle_name, placeholder: "Middle Name" %>
- <%= error_tag f, :middle_name %>
+
+<div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+  <div class="column is-half">
+    <div class="field ">
+      <label class="label">Identity Card Number</label>
+      <div class="control">
+        <%= text_input f, :id_number, placeholder: "ID Number", class: "input" %>
+        <%= error_tag f, :id_number %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half">
+    <div class="field">
+      <label class="label">Email Address</label>
+      <div class="control">
+        <%= text_input f, :email, placeholder: "Email", class: "input" %>
+        <%= error_tag f, :email %>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-<%= text_input f, :surname, placeholder: "Surname" %>
- <%= error_tag f, :suname %>
+
+<div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+  <div class="column is-half">
+    <div class="field ">
+      <label class="label">Location</label>
+      <div class="control">
+        <%= text_input f, :location, placeholder: "Location", class: "input" %>
+        <%= error_tag f, :location %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half">
+    <div class="field ">
+      <label class="label">Specialty</label>
+      <div class="control">
+        <%= text_input f, :speciality, placeholder: "Speciality", class: "input" %>
+        <%= error_tag f, :speciality%>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-<%= text_input f, :id_number, placeholder: "ID Number" %>
- <%= error_tag f, :id_number %>
+
+<div class="columns is-centered is-two-thirds-tablet is-three-quarters-mobile">
+  <div class="column is-half">
+    <div class="field">
+      <label class="label">Department</label>
+      <div class="control">
+        <%= text_input f, :department, placeholder: "Department", class: "input" %>
+        <%= error_tag f, :department %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half">
+    <div class="field">
+      <label class="label">Role</label>
+      <div class="control">
+        <%= select f, :role_id, roles(), class: "input" %>
+        <%= error_tag f, :role_id %>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-<%= text_input f, :department, placeholder: "Department" %>
- <%= error_tag f, :department %>
+<div class="field">
+  <div class="control">
+    <%= submit "Create Doctor", class: "button is-primary", class: "input" %>
+  </div>
 </div>
-<div>
-<%= text_input f, :speciality, placeholder: "Speciality" %>
- <%= error_tag f, :speciality%>
-</div>
-<div>
-<%= text_input f, :email, placeholder: "Email" %>
- <%= error_tag f, :email %>
- </div>
- <div>
-<%= text_input f, :location, placeholder: "Location" %>
- <%= error_tag f, :location %>
-</div>
-<%= submit "submit" %>
 <% end %>
 
   		
