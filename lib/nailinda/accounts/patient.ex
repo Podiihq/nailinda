@@ -29,5 +29,20 @@ defmodule Nailinda.Accounts.Patient do
       :location
     ])
     |> validate_required([:first_name, :last_name, :date_of_birth])
+    |> _validate_date_is_not_future
+  end
+
+  defp _validate_date_is_not_future(changeset) do
+    input_date = get_field(changeset, :date_of_birth)
+
+    if input_date do
+      case Date.compare(Date.utc_today(), input_date) do
+        :lt -> add_error(changeset, :date_of_birth, "cannot be a future date")
+        :gt -> changeset
+        :eq -> changeset
+      end
+    else
+      changeset
+    end
   end
 end
