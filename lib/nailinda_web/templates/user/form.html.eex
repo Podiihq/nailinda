@@ -1,21 +1,36 @@
-<%= form_for @changeset, @action, [], fn f -> %>
+<div class="container">
+  <%= form_for @changeset, @action, [], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Please check the errors below.</p>
     </div>
   <% end %>
-
-  <%= label f, :email %>
-  <%= text_input f, :email %>
+<div class="columns is-mobile">
+  <div class="column">
+<div class="field">
+  <%= label f, :email, class: "label" %>
+  <div class="control">
+  <%= text_input f, :email ,placeholder: "email", class: "input" %>
   <%= error_tag f, :email %>
+</div>
+</div>
+</div>
 
+<div class="column">
+<div class="field">
   <%= if @action == "/users" do %>
-    <%= label f, :password %>
-    <%= password_input f, :password %>
+    <%= label f, :password, class: "label"%>
+    <div class="control">
+    <%= password_input f, :password, class: "input"%>
     <%= error_tag f, :password %>
+    </div>
   <% end %>
+</div>
+</div>
+</div>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "button is-link"%>
   </div>
-<% end %>
+  <% end %>
+</div>
