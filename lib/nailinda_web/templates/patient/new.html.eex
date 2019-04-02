@@ -33,7 +33,7 @@
         <div class="field ">
           <label class="label">Date of Birth</label>
           <div class="control">
-            <%= date_select f, :date_of_birth, placeholder: "Date Of Birth", class: "input" %>
+            <%= date_select f, :date_of_birth, placeholder: "Date Of Birth", class: "input", year: [options: 1930..current_year()] %>
             <%= error_tag f, :date_of_birth%>
           </div>
         </div>

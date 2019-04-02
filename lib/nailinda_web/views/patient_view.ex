@@ -9,4 +9,8 @@ defmodule NailindaWeb.PatientView do
     t
     |> Enum.join(" ")
   end
+
+  def current_year do
+    Date.utc_today().year
+  end
 end
