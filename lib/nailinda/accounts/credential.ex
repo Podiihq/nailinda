@@ -1,4 +1,7 @@
 defmodule Nailinda.Accounts.Credential do
+  @moduledoc """
+  user credentials module
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
