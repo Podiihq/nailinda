@@ -131,12 +131,9 @@ defmodule Nailinda.Accounts do
   creates a role in the database
   """
 
-  def create_role(params) do
-     %{role: role} = params
-     params = %{role: String.downcase(role)}
-     
+  def create_role(role) do
     %Role{}
-    |> Role.changeset(params)
+    |> Role.changeset(%{role: role})
     |> Repo.insert()
   end
 
