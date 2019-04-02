@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+roles = ["patient", "doctor", "researcher"]
+
+Enum.map(roles, fn role -> Nailinda.Accounts.create_role(%{role: role}) end)
