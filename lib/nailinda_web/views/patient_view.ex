@@ -12,12 +12,7 @@ defmodule NailindaWeb.PatientView do
   end
   
   def roles() do
-    roles = Repo.all(Role)
-    Enum.map(roles, &{&1.role, &1.id})
+    role = Repo.get_by!(Role, %{role: "patient"})
+   [{role.role, role.id}]
   end
-
-  # def role_id() do
-  #   role = Repo.get_by(Role, %{role: "patient"})
-  #   role.id
-  # end
 end
