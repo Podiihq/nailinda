@@ -4,6 +4,7 @@ defmodule Nailinda.Accounts.Patient do
   """
   import Ecto.Changeset
   use Ecto.Schema
+  alias Nailinda.Accounts.Role
 
   schema "patients" do
     field(:first_name, :string)
@@ -32,5 +33,6 @@ defmodule Nailinda.Accounts.Patient do
     ])
     |> validate_required([:first_name, :last_name, :date_of_birth, :role_id])
     |> unique_constraint(:id_number)
+    |> foreign_key_constraint(:role_id)
   end
 end

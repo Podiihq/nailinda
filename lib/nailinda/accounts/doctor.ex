@@ -4,6 +4,7 @@ defmodule Nailinda.Accounts.Doctor do
   """
   use Ecto.Schema
   import Ecto.Changeset
+  alias Nailinda.Accounts.Role
 
   schema "doctors" do
     field(:first_name, :string)

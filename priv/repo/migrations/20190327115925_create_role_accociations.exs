@@ -3,10 +3,10 @@ defmodule Nailinda.Repo.Migrations.CreateRoleAccociations do
 
   def change do
     alter table(:doctors) do
-      add :role_id, references(:doctors)
+      add :role_id, references(:roles)
     end
     alter table(:patients) do
-      add :role_id, references(:patients)
+      add :role_id, references(:roles)
     end
   end
 end
