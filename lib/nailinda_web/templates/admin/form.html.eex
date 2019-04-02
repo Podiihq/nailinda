@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <%= form_for @changeset, @action, fn f -> %>
+        <%= if @changeset.action do %>
+          <div class="notification is-danger">
+            <p>Oops, something went wrong! Please check the errors below.</p>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= label f, :username %>
+          <%= text_input f, :username, class: "input" %>
+          <%= error_tag f, :username %>
+        </div>
+
+        <div class="field">
+          <%= label f, :email %>
+          <%= text_input f, :email, class: "input" %>
+          <%= error_tag f, :email %>
+        </div>
+
+        <div class="field">
+          <%= label f, :phone_number %>
+          <%= text_input f, :phone_number, class: "input" %>
+          <%= error_tag f, :phone_number %>
+        </div>
+
+        <div class="field">
+          <%= submit "Save", class: "button is-primary is-fullwidth" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
