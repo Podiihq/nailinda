@@ -1,4 +1,9 @@
-<table>
+<section class="hero">
+  <div class="hero-body">
+<div class="container">
+  <div class="columns">
+<table class="table table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+
   <thead>
     <th>ID</th>
     <th> Hospital Name</th>
@@ -6,12 +11,17 @@
   </thead>
 
   <tbody>
-    <tr> 
+    <tr>
     <td><%= @hospital.id %></td>
     <td><%= @hospital.hospital_name %></td>
     <td><%= get_member(@hospital) %></td>
-     <td><%=link "Edit", to: Routes.hospital_path(@conn, :edit, @hospital.id) %></td>
-     <td><%=link "Delete", to: Routes.hospital_path(@conn, :delete, @hospital.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
+     <td><%=link "Edit", class: "button is-primary", to: Routes.hospital_path(@conn, :edit, @hospital.id) %></td>
+     <td><%=link "Delete", class: "button is-primary", to: Routes.hospital_path(@conn, :delete, @hospital.id), method: "delete", data: [confirm: "are you sure?"]%></td>
+
    </tr>
   </tbody>
  </table>
+</div>
+</div>
+</section>
+<
