@@ -4,6 +4,7 @@ defmodule NailindaWeb.DoctorControllerTest do
 
   test "show a doctors details if found", %{conn: conn} do
     {:ok, role} = Accounts.create_role("patient")
+
     {:ok, doctor} =
       Accounts.create_doctor(%{
         first_name: "okoth",

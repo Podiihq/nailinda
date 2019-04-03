@@ -3,7 +3,7 @@ defmodule Nailinda.UserTest do
 
   alias Nailinda.Accounts
   alias Nailinda.Accounts.{Doctor, Patient}
-  
+
   describe "users" do
     @valid_attrs %{
       first_name: "jackline",
@@ -26,7 +26,10 @@ defmodule Nailinda.UserTest do
 
     test "creates patient with valid data " do
       {:ok, role} = Accounts.create_role("police")
-      assert {:ok, %Patient{} = patient} = Accounts.create_patient(Map.put(@valid_attrs, :role_id, role.id))
+
+      assert {:ok, %Patient{} = patient} =
+               Accounts.create_patient(Map.put(@valid_attrs, :role_id, role.id))
+
       assert patient.first_name == "jackline"
       assert patient.last_name == "kaunda"
       assert patient.date_of_birth == ~D[2019-01-28]
@@ -63,7 +66,10 @@ defmodule Nailinda.UserTest do
 
     test "creates doctor with valid data " do
       {:ok, role} = Accounts.create_role("star")
-      assert {:ok, %Doctor{} = doctor} = Accounts.create_doctor(Map.put(@valid_attrs, :role_id, role.id))
+
+      assert {:ok, %Doctor{} = doctor} =
+               Accounts.create_doctor(Map.put(@valid_attrs, :role_id, role.id))
+
       assert doctor.first_name == "okoth"
       assert doctor.surname == "kaunda"
       assert doctor.location == "Kisumu"
