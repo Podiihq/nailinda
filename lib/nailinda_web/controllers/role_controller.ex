@@ -10,7 +10,6 @@ defmodule NailindaWeb.RoleController do
   end
 
   def create(conn, %{"role" => %{"role" => role}}) do
-
     case Accounts.create_role(role) do
       {:ok, %Role{}} ->
         conn
