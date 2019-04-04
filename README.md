@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.com/Podiihq/nailinda.svg?branch=develop)](https://travis-ci.com/Podiihq/nailinda)
 
+This project is majorly on [elixir](http://elixir-lang.org/) and [redis](https://redislabs.com/), for the frontend we use [bulma](https://bulma.io) for styling. No heavy front end javascript at the moment. [Phoenix](https://phoenixframework.org/) also released [liveview](https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript) which we are considering using for reactive development though its still not in stable release
+
+**KINDLY NOTE: Getting started guide will be up soon to so you can start contributing** :smile:
+
 # Project Name: Nailinda
 
 ## Description
