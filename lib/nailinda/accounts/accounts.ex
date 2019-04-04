@@ -109,7 +109,7 @@ defmodule Nailinda.Accounts do
 
   def get_doctor_by_id(id) do
     Doctor
-    |> Repo.get!(id)
+    |> Repo.get(id)
   end
 
   def get_all_doctors do
