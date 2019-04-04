@@ -1,21 +1,45 @@
-<%= form_for @changeset, @action, [], fn f -> %>
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-body">
+<div class="container">
+  <%= form_for @changeset, @action, [], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Please check the errors below.</p>
     </div>
   <% end %>
+<div class="columns is-centered">
+  <div class="column is-4">
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
+<h1 class="title is-centered">New User</h1>
+   <div class="field">
+  <%= label f, :email, class: "label" %>
+   <div class="control">
+  <%= text_input f, :email ,placeholder: "email", class: "input" %>
   <%= error_tag f, :email %>
+</div>
+</div>
 
+
+
+<div class="field">
   <%= if @action == "/users" do %>
-    <%= label f, :password %>
-    <%= password_input f, :password %>
+    <%= label f, :password, class: "label"%>
+    <div class="control">
+    <%= password_input f, :password, class: "input"%>
     <%= error_tag f, :password %>
+    </div>
   <% end %>
-
-  <div>
-    <%= submit "Save" %>
+</div>
+<div class="field">
+    <%= submit "Save", class: "button is-link is-fullwidth"%>
   </div>
-<% end %>
+  <div class="field">
+  <span><%= link "Back", class: "button is-fullwidth", to: Routes.user_path(@conn, :index) %></span>
+  </div>
+</div>
+</div>
+</div>
+  
+  <% end %>
+</div>
+</section>
