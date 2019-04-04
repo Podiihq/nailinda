@@ -35,6 +35,13 @@ defmodule Nailinda.UserTest do
       assert patient.next_of_kin == "wayua"
     end
 
+    test "does not create patient with future date " do
+      future_date = Date.add(Date.utc_today(), +1)
+
+      assert {:error, _} =
+               Accounts.create_patient(Map.replace!(@valid_attrs, :date_of_birth, future_date))
+    end
+
     test "create user with invalid data to return a error" do
       assert {:error, %Ecto.Changeset{}} = Accounts.create_patient(@invalid_attrs)
     end
