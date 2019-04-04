@@ -1,44 +1,95 @@
+<div class="container">
 <%= form_for @changeset, @action, fn f -> %>
 <%= if @changeset.action do %>
 <div class = "alert alert-danger">
 Creation was not successful please try again
 </div>
 <% end %>
-<div>
-<%= text_input f, :first_name, placeholder: "First Name" %>
+<div class="columns">
+  <div class="column">
+<div class="field">
+  <label class="label">FirstName</label>
+   <div class="control">
+  <%= text_input f, :first_name, placeholder: "First Name" %>
  <%= error_tag f, :first_name %>
 </div>
-<div>
+</div>
+</div>
+
+<div class="column">
+<div class="filed">
+  <label class="label">MiddleName</label>
+   <div class="control">
 <%= text_input f, :middle_name, placeholder: "Middle Name" %>
  <%= error_tag f, :middle_name %>
 </div>
-<div>
+</div>
+</div>
+
+<div class="column">
+<div class="field">
+  <label class="label">Surname</label>
+   <div class="control">
 <%= text_input f, :surname, placeholder: "Surname" %>
  <%= error_tag f, :suname %>
 </div>
-<div>
+</div>
+</div>
+</div>
+
+
+<div class="columns">
+  <div class="column">
+<div class="field">
+  <label class="label">ID Number</label>
+   <div class="control">
 <%= text_input f, :id_number, placeholder: "ID Number" %>
  <%= error_tag f, :id_number %>
 </div>
-<div>
+</div>
+</div>
+
+<div class="column">
+<div class="field">
+  <label class="label">Department</label>
+   <div class="control">
 <%= text_input f, :department, placeholder: "Department" %>
  <%= error_tag f, :department %>
 </div>
-<div>
+</div>
+</div>
+
+<div class="column">
+<div class="field">
+  <label class="label">Speciality</label>
+   <div class="control">
 <%= text_input f, :speciality, placeholder: "Speciality" %>
  <%= error_tag f, :speciality%>
 </div>
-<div>
+</div>
+</div>
+</div>
+
+<div class="columns">
+  <div class="column is-4">
+<div class="field">
+  <label class="label">Email</label>
+   <div class="control">
 <%= text_input f, :email, placeholder: "Email" %>
  <%= error_tag f, :email %>
  </div>
- <div>
+</div>
+</div>
+
+<div class="column">
+ <div class="field">
+   <label class="label">Location</label>
+    <div class="control">
 <%= text_input f, :location, placeholder: "Location" %>
  <%= error_tag f, :location %>
 </div>
-<%= submit "submit" %>
+</div>
+</div>
+</div>
+<%= submit "submit", class: "button is-success" %>
 <% end %>
-
-  		
-  		
-  		

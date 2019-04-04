@@ -1,3 +1,4 @@
-<h1>Edit  Doctor's Details</h1>
-<%= render "form.html", Map.put(assigns, :action,Routes.doctor_path(@conn, :update, @doctor)) %>
 
+  <h1 class="title has-text-centered">Edit  Doctor's Details</h1>
+
+<%= render "form.html", Map.put(assigns, :action,Routes.doctor_path(@conn, :update, @doctor)) %>
