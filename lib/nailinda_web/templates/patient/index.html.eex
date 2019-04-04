@@ -1,5 +1,6 @@
-<b><h2>Patient details</h2></b>
- <table>
+<h2 class="title has-text-centered has-text-weight-bold">Patient details</h2>
+<div class="columns is-centered">
+ <table class="table is-hoverable is-stripped">
   <thead>
     <th>ID</th>
     <th> First Name</th>
@@ -22,9 +23,11 @@
   	<td><%= get_member(patient) %></td>
   	<td><%= patient.phone_number %></td>
   	<td><%= patient.next_of_kin  %></td>
-    <td><%=link "view", to: Routes.patient_path(@conn, :show, patient)%></td>
-
+    <td><%=link "view", to: Routes.patient_path(@conn, :show, patient), class: "button is-primary"%>
+      </td>
     </tr>
     <% end%>
   </tbody>
  </table>
+ </div>
+ 
