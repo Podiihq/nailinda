@@ -4,7 +4,7 @@ defmodule NailindaWeb.DoctorView do
   alias Nailinda.Accounts.Role
   alias Nailinda.Repo
 
-  def roles() do
+  def roles do
     role = Repo.get_by!(Role, %{role: "doctor"})
     [{role.role, role.id}]
   end
