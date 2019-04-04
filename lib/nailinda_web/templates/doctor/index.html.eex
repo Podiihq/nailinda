@@ -1,5 +1,8 @@
-<h2> Doctor  details</h2>
-<table>
+<div class="container">
+  <div class="columns is-mobile">
+    <div class="column is-centered is-three-quarters-mobile">
+   <h2 class="title has-text-centered"> Doctor  details</h2>
+<table class="table is-hoverable">
  	<thead>
  		<th>ID</th>
  		<th> First Name</th>
@@ -25,11 +28,14 @@
     <td><%= doctor.speciality%></td>
     <td><%= doctor.email%></td>
     <td><%= doctor.location %></td>
-    <td><%=link "Edit", to: Routes.doctor_path(@conn, :edit, doctor.id), class: "btn btn-default"
+    <td><%=link "Edit", to: Routes.doctor_path(@conn, :edit, doctor.id), class: "button is-primary"
       %></td>
-    <td><%=link "view", to: Routes.doctor_path(@conn, :show, doctor), class: "btn btn-default" %></td>
-    <td><%=link "Delete", to: Routes.doctor_path(@conn, :delete, doctor.id), method: "delete", data: [confirm: "are you sure?"], class: "btn btn-danger" %></td>
+    <td><%=link "view", to: Routes.doctor_path(@conn, :show, doctor), class: "button is-warning" %></td>
+    <td><%=link "Delete", to: Routes.doctor_path(@conn, :delete, doctor.id), method: "delete", data: [confirm: "are you sure?"], class: "button is-danger is-outlined" %></td>
    </tr>
    <%end %>
   </tbody>
  </table>
+</div>
+</div>
+</div>
