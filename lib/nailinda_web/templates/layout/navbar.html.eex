@@ -13,9 +13,8 @@
 
   <div class="navbar-menu">
     <div class="navbar-end">
-      <a class="navbar-item"> Home </a>
-      <a class="navbar-item"> About </a>
-      <a class="navbar-item"> Contact Us </a>
+      <a class="navbar-item" href="/"> Home </a>
+      <a class="navbar-item" href="/about"> About </a>
     </div>
 
     <div class="navbar-end">
