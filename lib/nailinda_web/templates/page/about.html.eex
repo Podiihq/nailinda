@@ -1,0 +1,33 @@
+<div id="page-about">
+  <section class="hero is-fullheight-with-navbar intro">
+    <div class="hero-body has-text-grey">
+      <div class="container ">
+        <h1 class="title has-text-black is-size-1">
+          About Us
+        </h1>
+        <h2 class="title is-2 has-text-black">Vision</h2>
+        <div class="content">
+
+          <p>We aspire to offer easy location of both patients and hospitals,<br>
+             to provide quick medical services and to keep succuint medical<br>records on a continuos basis.</p>
+
+          </div>
+          <h2 class="title is-2 has-text-black">Our Services</h2>
+          <div class="content">
+            <h3 class="subtitle is-4 has-text-black">Emergency Services</h3>
+
+            <p>We provide quick dial-up help lines to ensure that life threatening cases,
+               <br>both emergency and non-emergency, receive the quickest response.</p>
+
+            </div>
+            <div class="content">
+              <h3 class="subtitle is-4 has-text-black">Patient Location Data</h3>
+
+              <p>For potential utilization of clinical services by storing <br>
+                patient geographical inormation system data to plan telemedicine service location.</p>
+
+              </div>
+      </div>
+    </div>
+  </section>
+</div>
