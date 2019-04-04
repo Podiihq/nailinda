@@ -15,6 +15,7 @@ defmodule NailindaWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/about", PageController, :about
     resources "/patient", PatientController
     get "/patient-locations", PatientController, :locations
     resources "/doctor", DoctorController
