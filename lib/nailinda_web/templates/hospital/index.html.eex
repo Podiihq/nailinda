@@ -1,18 +1,32 @@
-<table>
-  <thead>
-    <th>ID</th>
-    <th> Hospital Name</th>
-    <th> Hospital Location</th>
-  </thead>
 
-  <tbody>
-    <%= for hospital <- @hospitals do %>
-    <tr> 
-    <td><%= hospital.id %></td>
-    <td><%= hospital.hospital_name %></td>
-    <td><%= get_member(hospital) %></td>
-     <td><%=link "View", to: Routes.hospital_path(@conn, :show, hospital.id) %></td>
-   </tr>
-   <% end %>
-  </tbody>
- </table>
+<div class="container">
+    <div class="columns is-centered">
+    <div class="column is-6">
+     <table class="table">
+      
+     <thead>
+        <h2 class="title has-text-centered">Hospitals form</h2>
+        <tr>
+        <th>ID</th>
+        <th> Hospital Name</th>
+        <th> Hospital Location</th>
+        </tr>
+      </thead>
+    
+
+      <tbody>
+       
+        <%= for hospital <- @hospitals do %>
+        <tr> 
+        <td><%= hospital.id %></td>
+        <td><%= hospital.hospital_name %></td>
+        <td><%= get_member(hospital) %></td>
+         <td><%=link "View", class: "button is-primary", to: Routes.hospital_path(@conn, :show, hospital.id) %></td>
+       </tr>
+       <% end %>
+      </tbody>
+      </table>
+    </div>
+   </div>
+ 
+</div>
